@@ -1,4 +1,4 @@
-build/
+_build/
 *.pyc
 .vscode
 .DS_store
