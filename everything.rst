@@ -109,7 +109,11 @@ or
   import socket; print(socket.gethostname())
   
   
+Get IP Address
 
+  import socket; s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM);s.connect(("8.8.8.8", 80));print(s.getsockname()[0])
+  
+(Or use urllib with json, read remote API.)  
 
 
 
