@@ -1,14 +1,13 @@
-.. Tweetable Python documentation master file, created by
-   sphinx-quickstart on Sat Jul 21 22:55:00 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Tweetable Python
 ==================
 
-A book of short (280 chars or less) python commands which get the job done. 
+A book of short (280 chars or less) python commands which get the job done.
 
 Inspired by Peteris Krumins' Perl One Liners.
+
+The book is a collection of 128 python programs. Each of these programs does something useful and/or fun.
+
+
 
 .. toctree::
    :maxdepth: 2
