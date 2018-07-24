@@ -8,6 +8,8 @@ python -m http.server
 
 python -m json.tools
 
+python -m idlelib.idle
+
 String manipulation
 =====================
 
