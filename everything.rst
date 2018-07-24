@@ -97,6 +97,19 @@ ester eggs
 
 import this
 
+networking
+==============
+
+get local hostname
+
+  os.uname().nodename
+  
+or 
+
+  import socket; print(socket.gethostname())
+  
+  
+
 
 
 
