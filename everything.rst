@@ -6,7 +6,14 @@ module
 
 python -m http.server
 
-python -m json.tool
+python -m json.tools
+
+String manipulation
+=====================
+
+left pad
+convert repeated spaces to one space
+
 
 password
 ===================
@@ -37,6 +44,12 @@ base64 encoding
 
 base64 decoding
 
+zip all .txt files in directory
+
+batch rename files in directory
+
+prettify json
+
 file manipulation
 ===================
 
@@ -46,7 +59,43 @@ count words in file
 
 count lines in file
 
-add spaces after punctuation.
+add spaces after punctuation
+
+add line numbers to text file
+add line numbers to text file, don't number empty lines
+
+delete trailing spacess
+
+delete multiple newlines between paragraphs to keep only one line
+
+first ten lines of file
+
+last ten lines of file
+
+games
+=======
+
+guess the number (binary search)
+
+ascii art
+================
+
+asterisk triangle
+banners (cowsay)
+
+Mathematic
+==============
+
+pascal's triangle
+
+unit convertor
+
+ester eggs
+============
+
+import this
+
+
 
 
 

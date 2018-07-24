@@ -6,7 +6,7 @@
 Tweetable Python
 ==================
 
-A book of short (280 chars or less) python commands which get the job done. 
+A book of 128 short python commands (280 chars or less) which get the job done. 
 
 Inspired by Peteris Krumins' Perl One Liners.
 
