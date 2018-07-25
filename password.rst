@@ -1,5 +1,5 @@
 password
-===================
+------------
 
 Random Alpha-numeric passwords
 
