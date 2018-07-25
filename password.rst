@@ -2,6 +2,7 @@ password
 ------------
 
 Random Alpha-numeric passwords
+==============================
 
 .. code-block:: python
 
@@ -11,6 +12,7 @@ Creates a random alpha-numberic string of 8 characters that can be used as a pas
 
 
 Pronouncable passwords
+======================
 
 .. code-block:: python
 
@@ -18,6 +20,10 @@ Pronouncable passwords
 
 
 Creates a random '-' separated 4 word password from the given input text file to be used as a password
+
+
+Passwords with alternate vowels
+===============================
 
 .. code-block:: python
 

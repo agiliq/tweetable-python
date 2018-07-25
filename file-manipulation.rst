@@ -2,6 +2,8 @@ file manipulation
 -----------------
 
 oxford comma
+============
+
 
 count words in file
 ===================
@@ -62,6 +64,8 @@ Creates a new file with line number before each line. If the line is empty it wi
 
 
 delete trailing spaces
+======================
+
 
 delete multiple newlines between paragraphs to keep only one line
 =================================================================
