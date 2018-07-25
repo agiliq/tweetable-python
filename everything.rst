@@ -8,6 +8,8 @@ python -m http.server
 
 python -m json.tools
 
+python -m idlelib.idle
+
 String manipulation
 =====================
 
@@ -106,6 +108,23 @@ ester eggs
 
 import this
 
+networking
+==============
+
+get local hostname
+
+  os.uname().nodename
+  
+or 
+
+  import socket; print(socket.gethostname())
+  
+  
+Get IP Address
+
+  import socket; s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM);s.connect(("8.8.8.8", 80));print(s.getsockname()[0])
+  
+(Or use urllib with json, read remote API.)  
 
 
 
