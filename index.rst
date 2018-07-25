@@ -27,6 +27,9 @@ Lets get started.
    :caption: Table of Contents:
 
    everything
+   file-manipulation
+   file-conversion
+   password
 
 
 
