@@ -80,6 +80,7 @@ Delete multiple new lines from a file between paragraphs and save it in a new fi
 
 first ten lines of file
 =======================
+
 .. code-block:: python
 
     open('data/100west.txt', 'r').read().split('\n')[:10]
@@ -89,6 +90,7 @@ Returns first 10 lines of a file.
 
 last ten lines of file
 ======================
+
 .. code-block:: python
 
     open('data/100west.txt', 'r').read().split('\n')[-10:]
