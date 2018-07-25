@@ -2,14 +2,24 @@ file conversions
 ----------------
 
 csv to json
+===========
+
 
 json to csv
+===========
+
 
 csv to sqlite
+=============
+
 
 base64 encoding
+===============
+
 
 base64 decoding
+===============
+
 
 zip all .txt files in directory
 ===============================
@@ -23,6 +33,8 @@ zipfile.ZipFile creates a new zip file. os.listdir() lists all the files in the 
 
 
 batch rename files in directory
+===============================
+
 
 prettify json
 =============
