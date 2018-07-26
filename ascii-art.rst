@@ -40,13 +40,13 @@ Prints out asterisk triangle in decremental order. Example:
 
 Prints out a asterisk triangle as below:
 
-          *
-        * * *
-      * * * * *
-    * * * * * * *
-  * * * * * * * * *
+.. code-block:: python
 
-
+      |           *
+      |         * * *
+      |        * * * * *
+      |      * * * * * * *
+      |    * * * * * * * * *
 
 
 banners (cowsay)
