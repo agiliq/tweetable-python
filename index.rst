@@ -30,6 +30,7 @@ Lets get started.
    file-manipulation
    file-conversion
    password
+   ascii-art
 
 
 
