@@ -31,6 +31,8 @@ Lets get started.
    file-conversion
    password
    ascii-art
+   mathematics
+   string-manipulation
 
 
 
