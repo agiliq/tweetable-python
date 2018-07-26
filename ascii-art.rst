@@ -42,8 +42,8 @@ Prints out a asterisk triangle as below:
 
 .. code-block:: python
 
-      |           *
-      |         * * *
+      |            *
+      |          * * *
       |        * * * * *
       |      * * * * * * *
       |    * * * * * * * * *
