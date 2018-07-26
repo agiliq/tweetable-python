@@ -6,7 +6,7 @@ csv to json
 
 .. code-block:: python
 
-    import csv,json;reader = csv.DictReader(open('data/xyz.csv', 'r'), fieldnames=( "User","Country","Age"))
+    import csv,json;reader = csv.DictReader(open('data/example.csv', 'r'), fieldnames=( "User","Country","Age"))
     out=open('data/out.json','w'); out.write(json.dumps([row for row in reader]))
 
 Converts a given file of comma separated values to json and store it in another file.
@@ -18,7 +18,7 @@ json to csv
 
 .. code-block:: python
 
-    import json, csv; _json=json.loads(open('data/out.json', 'r').read())
+    import json, csv; _json=json.loads(open('data/example.json', 'r').read())
     out=open('data/converted.csv', 'w')
     [out.write(','.join([x[x.keys()[i]] for i in range(len(x))]) + '\n')  for x in _json]
 
