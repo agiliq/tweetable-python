@@ -9,7 +9,7 @@ The world's smallest hello world program?
     import __hello__
 
 
-Or :code-block:`python -c 'import __hello__'`.
+Or :code:`python -c 'import __hello__'`.
 
 
 What would Guido do?
