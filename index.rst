@@ -26,12 +26,13 @@ Lets get started.
    :maxdepth: 2
    :caption: Table of Contents:
 
+   string-manipulation
    file-manipulation
    file-conversion
    password
    ascii-art
    mathematics
-   string-manipulation
+   networking
    ester-eggs
 
 
