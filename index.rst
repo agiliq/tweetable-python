@@ -32,7 +32,7 @@ Lets get started.
    ascii-art
    mathematics
    string-manipulation
-
+   ester-eggs
 
 
 Indices and tables
