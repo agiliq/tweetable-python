@@ -9,7 +9,7 @@ The world's smallest hello world program?
     import __hello__
 
 
-Or :code-block:`python -c 'import __hello__'`.
+Or :code:`python -c 'import __hello__'`.
 
 
 What would Guido do?
@@ -19,7 +19,7 @@ What would Guido do?
 
     import this
 
-The :code:`import this` is well known, but lets look at the source code.
+The :code:`import this` is well known, but let's look at the source code.
 
 .. code-block:: python
 
@@ -53,3 +53,58 @@ The :code:`import this` is well known, but lets look at the source code.
     print("".join([d.get(c, c) for c in s]))
 
 It doesn't contain the Zen of Python, but :code:`d[chr(i+c)] = chr((i+13) % 26 + c)` gives it away. It is the Zen of Python with a Rot13 transform.
+
+
+Are we Java yet?
+---------------------
+
+.. code-block:: python
+
+    >>> from __future__ import braces
+
+    File "<stdin>", line 1
+    SyntaxError: not a chance
+
+
+How does this work? Look at :code:`__futures__.py`. You won't find any :code:`braces`.
+This error gets propagated to :code:`parso/python/errors.py`, where we find:
+
+.. code-block:: python
+
+
+    @ErrorFinder.register_rule(type='import_from')
+    class _FutureImportRule(SyntaxRule):
+        message = "from __future__ imports must occur at the beginning of the file"
+
+        def is_issue(self, node):
+            if _is_future_import(node):
+                if not _is_future_import_first(node):
+                    return True
+
+                for from_name, future_name in node.get_paths():
+                    # ...
+                    if name == 'braces':
+                        self.add_issue(node, message = "not a chance")
+                    # ...
+
+I believe I can fly
+----------------------
+
+.. code-block:: python
+
+    import antigravity
+
+This takes you to https://xkcd.com/353/. Let's look at :code:`antigravity.py`.
+
+.. code-block:: python
+
+    import webbrowser
+    import hashlib
+
+    webbrowser.open("https://xkcd.com/353/")
+
+    def geohash(latitude, longitude, datedow):
+        '''Compute geohash() using the Munroe algorithm.
+        # ...
+
+:code:`webbrowser.open("https://xkcd.com/353/")` is what opens the web page. This is another example of how "batteries included" Python is. It even comes with and `Interfaces for launching and remotely controlling Web browsers`.
