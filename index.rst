@@ -33,6 +33,7 @@ Lets get started.
    ascii-art
    mathematics
    networking
+   modules
    ester-eggs
 
 
