@@ -21,3 +21,10 @@ Prints out Pascal's triangle as below
 
 unit convertor
 ==============
+
+
+transpose a matrix
+==================
+
+Sieve of Eratosthenes
+========================

@@ -51,4 +51,4 @@ Run it as
 .. code-block:: bash
 
     $ python -c "import urllib.request, json; print(json.loads(urllib.request.urlopen('http://jsonip.com').read())['ip'])"
-183.83.214.40
+    183.83.214.40
