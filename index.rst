@@ -7,7 +7,7 @@ Inspired by Peteris Krumins' Perl One Liners.
 
 The book is a collection of 128 small python programs. Each of these programs does something useful and/or fun.
 
-Take this example 
+Take this example
 
 .. code-block:: python
 
@@ -26,14 +26,13 @@ Lets get started.
    :maxdepth: 2
    :caption: Table of Contents:
 
-   everything
    file-manipulation
    file-conversion
    password
    ascii-art
    mathematics
    string-manipulation
-
+   ester-eggs
 
 
 Indices and tables
