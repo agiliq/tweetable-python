@@ -1,8 +1,10 @@
 String manipulation
-=====================
+-------------------
+
 
 left pad
 ========
+
 
 convert repeated spaces to one space
 ====================================
