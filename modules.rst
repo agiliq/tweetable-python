@@ -60,3 +60,9 @@ A simple editor for Python
 Every python install comes with the idle editor, you can start it like this :code:`python -m idlelib.idle`
 
 ..image:: _static/idle.png
+
+
+Debugging emails
+-------------------
+
+python -m smtpd -n -c DebuggingServer localhost:1025

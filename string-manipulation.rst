@@ -30,9 +30,11 @@ The above snippet clears out the repeated spaces in a text and replaces it with 
 re is a regular expression module to find more than one occurrences of space with '[ ]+'.
 
 
-Find if a string is a valid IP v4 address
+Check if a string is a valid IP v4 address
 ========================================================================
 
-Find if a string is a valid IP v6 address
+Check if a string is a valid IP v6 address
 ========================================================================
 
+Find all valid anagrams of a word
+=======================================

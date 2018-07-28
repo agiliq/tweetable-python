@@ -31,4 +31,4 @@ Passwords with alternate vowels
     "".join(itertools.chain(*zip([random.choice(string.ascii_lowercase) for _ in range(6)],  [random.choice('aeiou') for _ in range(6)])))
 
 Caesar Cipher
---------------------
+===============================
