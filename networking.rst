@@ -40,7 +40,7 @@ Run it as
 Get IP Address using a remote service
 --------------------------------------
 
-code-block:: python
+.. code-block:: python
 
     import urllib.request, json
     json.loads(urllib.request.urlopen('http://jsonip.com').read())['ip']

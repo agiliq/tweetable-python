@@ -10,7 +10,16 @@ csv to json
     out=open('data/out.json','w'); out.write(json.dumps([row for row in reader]))
 
 Converts a given file of comma separated values to json and store it in another file.
-The csv used here doensnt' contain headers for the columns.
+The csv used here doesn't contain headers for the columns.
+
+:code:`csv.DictReader(open('data/example.csv', 'r'), fieldnames=( "User","Country","Age"))` gets us the DictReader object from the csv file with three columns specified as fieldnames. :code:`json.dumps([row for row in reader])`, converts the json object to string for writing it in output file and :code:`out.write()` method writes the data into the file.
+
+To run it for arbitrary files
+
+
+.. code-block:: bash
+
+    $ python -c "import csv,json,sys;reader = csv.DictReader(open(sys.argv[1], 'r'), fieldnames=( "User","Country","Age"));out=open('data/out.json','w'); out.write(json.dumps([row for row in reader]))" data/example.csv
 
 
 json to csv
@@ -24,6 +33,8 @@ json to csv
 
 Creates a csv file from a json file.
 
+:code:`json.loads(open('data/example.json', 'r').read())` Creates a json object from json file.
+
 
 csv to sqlite
 =============
@@ -34,9 +45,16 @@ base64 encoding
 
 .. code-block:: python
 
-    base64.encode(open('data/100west.txt', 'r'), open('data/encoded.txt', 'w'))
+    import base64;base64.encode(open('data/100west.txt', 'r'), open('data/encoded.txt', 'w'))
 
 Converts an input file to base64 encoded file.
+
+To run it for arbitrary files
+
+
+.. code-block:: bash
+
+    $ python -c "import base64,sys,sys;base64.encode(open(sys.argv[1], 'r'), open('data/encoded.txt', 'w'))" data/test.txt
 
 
 base64 decoding
@@ -44,9 +62,16 @@ base64 decoding
 
 .. code-block:: python
 
-    base64.decode(open('data/encoded.txt', 'r'), open('data/decoded.txt', 'w'))
+    import base64;base64.decode(open('data/encoded.txt', 'r'), open('data/decoded.txt', 'w'))
 
 Decodes the base64 encoded file back to its original encoding.
+
+To run it for arbitrary files
+
+
+.. code-block:: bash
+
+    $ python -c "import base64,sys;base64.decode(open(sys.argv[1], 'r'), open('data/decoded.txt', 'w'))" data/test.txt
 
 
 zip all .txt files in directory
@@ -57,7 +82,14 @@ zip all .txt files in directory
     import zipfile, os; myzip = zipfile.ZipFile('test.zip', 'w'); [myzip.write(each) for each in os.listdir() if each.endswith('.txt')]
 
 Creates a zip file called test.zip of all the .txt files present in your current directory.
-zipfile.ZipFile creates a new zip file. os.listdir() lists all the files in the current directory.
+zipfile.ZipFile creates a new zip file. :code:`os.listdir()` lists all the files in the current directory.
+
+To run it for arbitrary directory. You must provide the absolute path to the directory
+
+
+.. code-block:: bash
+
+    $ python -c "import zipfile,os,sys; myzip=zipfile.ZipFile('test.zip', 'w'); [myzip.write(each) for each in os.listdir(sys.argv[1]) if each.endswith('.txt')]" /User/xyz/files/
 
 
 batch rename files in directory
