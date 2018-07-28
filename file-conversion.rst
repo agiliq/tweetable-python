@@ -95,6 +95,22 @@ To run it for arbitrary directory. You must provide the absolute path to the dir
 batch rename files in directory
 ===============================
 
+Change all files with :code:`.txt` extension to :code:`.rst`.
+
+Rename all files in directory to add .bak extension
+=====================================================
+
+Copy all files with name :code:`filename.ext` to `filename.bak.ext`
+
+Managing your downloads folder
+==================================
+
+When you download files, it generally goes :code:`~/Downloads`. 
+This folder grows and becomes unwieldy as time goes.
+
+So to manage this, we will create a folder of format :code:`YYYY-MM` in the :code:`~/Downloads` folder 
+and move all files tothe correct folder.
+
 
 prettify json
 =============
