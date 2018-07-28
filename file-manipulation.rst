@@ -135,3 +135,15 @@ To run it for arbitrary files
 .. code-block:: bash
 
     $ python -c "import sys; open(sys.argv, 'r').read().split('\n')[-10:]" data/test.txt
+
+Reverse a file line by line
+===================================
+
+Get alternate lines from files starting from the top
+======================================================
+
+Find the most common words in a file
+======================================
+
+Find the lines which match a specified text
+============================================================================

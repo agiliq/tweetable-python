@@ -1,6 +1,12 @@
 Mathematic
 ----------
 
+Deciman to Binary
+=======================
+
+Binary to decimal
+========================
+
 pascal's triangle
 =================
 

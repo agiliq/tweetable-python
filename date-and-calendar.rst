@@ -27,3 +27,6 @@ Display current month's calendar
 Is the current year a leap year?
 ---------------------------------
 
+Unix epoch time
+-----------------------------
+
