@@ -12,7 +12,20 @@ count words in file
 
     len(open('data/test.txt', 'r').read().split())
 
-Returns the number of words in a text file, test.txt
+Returns the number of words in a text file, test.txt.
+:code:`open('data/test.txt', 'r').read()` gets us the text of the file, we get the word using :code:`.split()`, and :code:`len` gives us the count of the words.
+
+To run it for arbitrary files
+
+
+.. code-block:: bash
+
+    $ python -c "import sys; print(len(open(sys.argv[1], 'r').read().split()))" data/test.txt
+    47
+
+
+
+
 
 
 count lines in file
