@@ -49,5 +49,25 @@ Prints out a asterisk triangle as below:
       |    * * * * * * * * *
 
 
+Alternating Pattern
+===================
+
+.. code-block:: python
+
+    print('\n'.join([(x+1)*'#'+(7-x)*'*' for x in range(7)]))
+
+Prints alternating patterns in # and * based on a given integer n. n=7 here.
+
+.. code-block:: python
+
+    #*******
+    ##******
+    ###*****
+    ####****
+    #####***
+    ######**
+    #######*
+
+
 banners (cowsay)
 ================
