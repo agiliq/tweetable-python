@@ -1,4 +1,4 @@
-networking
+Networking
 +++++++++++
 
 
@@ -52,3 +52,9 @@ Run it as
 
     $ python -c "import urllib.request, json; print(json.loads(urllib.request.urlopen('http://jsonip.com').read())['ip'])"
     183.83.214.40
+
+Generate a Random IPv6 Address
+-------------------------------
+
+Generate a gravatar url from email 
+-----------------------------------

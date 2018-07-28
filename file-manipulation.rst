@@ -1,4 +1,4 @@
-file manipulation
+File manipulation
 -----------------
 
 oxford comma

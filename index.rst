@@ -27,6 +27,7 @@ Lets get started.
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Table of Contents:
 
    string-manipulation
@@ -36,6 +37,7 @@ Lets get started.
    ascii-art
    mathematics
    networking
+   date-and-calendar
    modules
    ester-eggs
 

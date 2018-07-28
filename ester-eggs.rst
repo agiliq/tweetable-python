@@ -1,4 +1,4 @@
-ester eggs
+Ester eggs
 ++++++++++
 
 The world's smallest hello world program?
