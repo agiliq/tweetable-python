@@ -28,3 +28,11 @@ convert repeated spaces to one space
 
 The above snippet clears out the repeated spaces in a text and replaces it with single space.
 re is a regular expression module to find more than one occurrences of space with '[ ]+'.
+
+
+Find if a string is a valid IP v4 address
+========================================================================
+
+Find if a string is a valid IP v6 address
+========================================================================
+

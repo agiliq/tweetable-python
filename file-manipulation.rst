@@ -141,3 +141,9 @@ Reverse a file line by line
 
 Get alternate lines from files starting from the top
 ======================================================
+
+Find the most common words in a file
+======================================
+
+Find the lines which match a specified text
+============================================================================
