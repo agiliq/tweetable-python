@@ -24,10 +24,6 @@ To run it for arbitrary files
     47
 
 
-
-
-
-
 count lines in file
 ===================
 
@@ -36,6 +32,15 @@ count lines in file
     len(open('data/test.txt', 'r').read().split('\n'))
 
 Returns the number of lines in a text file, test.txt
+:code:`open('data/test.txt', 'r').read()` gets us the text of the file, we get the word using :code:`.split('\n')`, and :code:`len` gives us the count of lines.
+
+To run it for arbitrary files
+
+
+.. code-block:: bash
+
+    $ python -c "import sys;len(open(sys.argv[1], 'r').read().split('\n'))" data/test.txt
+    54
 
 
 add spaces after punctuation
@@ -90,6 +95,13 @@ delete multiple newlines between paragraphs to keep only one line
 
 Delete multiple new lines from a file between paragraphs and save it in a new file.
 
+To run it for arbitrary files
+
+
+.. code-block:: bash
+
+    $ python -c "import sys;out=open('data/out-single-line-gap.txt', 'w');out.write((re.sub('(\n\n)[\n]*', '\n\n', open(sys.argv[1],'r').read())))" data/test.txt
+
 
 first ten lines of file
 =======================
@@ -100,6 +112,13 @@ first ten lines of file
 
 Returns first 10 lines of a file.
 
+To run it for arbitrary files
+
+
+.. code-block:: bash
+
+    $ python -c "import sys; open(sys.argv[1], 'r').read().split('\n')[:10]" data/test.txt
+
 
 last ten lines of file
 ======================
@@ -109,3 +128,10 @@ last ten lines of file
     open('data/100west.txt', 'r').read().split('\n')[-10:]
 
 Returns last 10 lines of a file
+
+To run it for arbitrary files
+
+
+.. code-block:: bash
+
+    $ python -c "import sys; open(sys.argv, 'r').read().split('\n')[-10:]" data/test.txt

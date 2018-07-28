@@ -11,7 +11,7 @@ Random Alpha-numeric passwords
 Creates a random alpha-numberic string of 8 characters that can be used as a password.
 
 
-Pronouncable passwords
+Pronounceable passwords
 ======================
 
 .. code-block:: python
