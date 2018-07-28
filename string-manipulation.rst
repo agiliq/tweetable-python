@@ -1,9 +1,22 @@
 String manipulation
 ++++++++++++++++++++++++
 
+Rot13 a String
+====================
 
 left pad
 ========
+
+Speaking in ubbi dubbi
+================================
+
+https://www.youtube.com/watch?v=rfR03gibh6M
+https://en.wikipedia.org/wiki/Ubbi_dubbi
+
+Pig latin
+================
+
+https://en.wikipedia.org/wiki/Pig_Latin
 
 
 convert repeated spaces to one space

@@ -1,4 +1,4 @@
-mathematic
+Mathematic
 ----------
 
 pascal's triangle
@@ -28,6 +28,15 @@ OEIS sequence A127421
 
 Prints out an OEIS sequence A127421, numbers whose decimal expansion is a concatenation of 2 consecutive increasing non-negative numbers.
 1, 12, 23, 34, 45, 56, 67, 78, 89, 910, 1011, 1112, ....
+
+Check if a number is a prime
+===================================
+
+Find largest number among numbers passed on command line
+===========================================================
+
+Find largest number among numbers passed on command line
+===========================================================
 
 
 unit convertor

@@ -1,4 +1,4 @@
-ascii art
+Ascii art
 ---------------
 
 asterisk triangle

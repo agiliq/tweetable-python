@@ -1,5 +1,5 @@
-password
-------------
+Password generation and validation
+-------------------------------------
 
 Random Alpha-numeric passwords
 ==============================
@@ -12,7 +12,7 @@ Creates a random alpha-numberic string of 8 characters that can be used as a pas
 
 
 Pronounceable passwords
-======================
+========================
 
 .. code-block:: python
 
@@ -30,3 +30,5 @@ Passwords with alternate vowels
     import random, string, itertools;
     "".join(itertools.chain(*zip([random.choice(string.ascii_lowercase) for _ in range(6)],  [random.choice('aeiou') for _ in range(6)])))
 
+Caesar Cipher
+--------------------
