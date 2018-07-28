@@ -1,4 +1,5 @@
 _build/
 *.pyc
 .vscode
+.pytest_cache
 .DS_store
