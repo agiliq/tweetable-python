@@ -2,7 +2,7 @@ Tweetable Python
 ==================
 
 
-    Judge me by my size, do you? Hmm, hmm. - Yoda. 
+    Judge me by my size, do you? Hmm, hmm. - Yoda.
 
 A book of 128 short (280 chars or less) python commands which get the job done.
 
@@ -39,6 +39,8 @@ Lets get started.
    networking
    date-and-calendar
    modules
+   lists-set
+   misc
    ester-eggs
 
 
