@@ -20,6 +20,9 @@ Generate all permutations from a list
 Generate power set of a set
 --------------------------------------
 
+Sort a dictionary by keys
+--------------------------------
+
 Sort a dictionary by value
 --------------------------------
 

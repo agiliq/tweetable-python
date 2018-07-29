@@ -1,14 +1,13 @@
 Tweetable Python
 ==================
 
+A book of 128 tiny (280 chars or less) python programs which pack a punch.
+Each programs in this books fits in a single tweet and does something useful, powerful or fun.
 
-    Judge me by my size, do you? Hmm, hmm. - Yoda.
+These programs will serve a reference, inspire and delight.
+In most cases, the code is :code:`Pythonic`, without any obfuscation or code golfing.
 
-A book of 128 short (280 chars or less) python commands which get the job done.
-
-Inspired by Peteris Krumins' Perl One Liners.
-
-The book is a collection of 128 small python programs. Each of these programs does something useful and/or fun.
+These programs serve as a testament to Python's power, conciseness *and* clarity
 
 Take this example
 
@@ -22,7 +21,10 @@ Take this example
 
 In less than a 100 chars, you can generate truly random passwords.
 
-We will look at things like file manipulation, file conversion, password generation and even a game.
+
+We will look at things like file manipulation, file conversion, password generation, ascii art and even some games. This book is inspired by Peteris Krumins' Perl One Liners.
+
+.. note:: Judge me by my size, do you? Hmm, hmm. - Yoda.
 
 Lets get started.
 
