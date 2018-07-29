@@ -1,6 +1,9 @@
 String manipulation
 ++++++++++++++++++++++++
 
+Invert letter case of string
+===============================
+
 Rot13 a String
 ====================
 
@@ -36,5 +39,10 @@ Check if a string is a valid IP v4 address
 Check if a string is a valid IP v6 address
 ========================================================================
 
+Check if string is palindrome
+==============================
+
 Find all valid anagrams of a word
 =======================================
+
+
