@@ -1,5 +1,5 @@
-Password generation and validation
--------------------------------------
+Password generation, validation and more random things
+---------------------------------------------------------
 
 Random Alpha-numeric passwords
 ==============================
@@ -30,5 +30,34 @@ Passwords with alternate vowels
     import random, string, itertools;
     "".join(itertools.chain(*zip([random.choice(string.ascii_lowercase) for _ in range(6)],  [random.choice('aeiou') for _ in range(6)])))
 
+
+Validate password complexity
+==============================
+
+Validate that a password is least 8 chars, and contains at least 3 of lowercase, uppercase, numbers and symbols.
+
+
+
 Caesar Cipher
 ===============================
+
+Generate a UUID
+========================
+
+
+Generate a url safe UUID
+=========================
+
+(For example for use as a slug)
+
+.. code-block:: python
+
+    import uuid, base64
+    base64.urlsafe_b64encode(uuid.uuid4().bytes)
+
+This will give a 24 char UUID. If you need a shorter one, you can take a slice
+
+.. code-block:: python
+
+    import uuid, base64
+    base64.urlsafe_b64encode(uuid.uuid4().bytes)[:16]

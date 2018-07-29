@@ -19,6 +19,18 @@ GCD of two number
 LCM of two numbers
 =====================
 
+Find the sum of all the multiples of 3 or 5 below 1000.
+==========================================================
+
+Distance between two points in three dimensional space
+==========================================================
+
+.. code-block:: python
+
+    def distance(p1, p2) :
+        (sum((wi - vi)**2 for  in zip(p1, p2)))**.5
+    print distance((0,0,0), (5,4,3))
+
 
 pascal's triangle
 =================

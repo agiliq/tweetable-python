@@ -66,3 +66,9 @@ Debugging emails
 -------------------
 
 python -m smtpd -n -c DebuggingServer localhost:1025
+
+
+Profiling scripts
+----------------------
+
+python -m cProfile scriptname.py

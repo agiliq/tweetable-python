@@ -147,3 +147,17 @@ Find the most common words in a file
 
 Find the lines which match a specified text
 ============================================================================
+
+
+Convert file permissions to octal
+===================================
+
+rw-r--r-- = 644
+rwxrwxrwx = 777
+
+
+Convert octal file permissions to rwx format
+=============================================
+
+644 = rw-r--r--
+777 = rwxrwxrwx
