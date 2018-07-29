@@ -62,5 +62,24 @@ List all addresses in a subnet
 Generate a Random IPv6 Address
 -------------------------------
 
+Generate a mac Address
+-----------------------------
+
+.getnode() can fake the MAC addr by returning a random 48-bit number, calling it twice ensure we are not hitting the random path
+
+.. code-block:: python
+
+    from uuid import getnode
+
+    def get_mac():
+        return hex(getnode()) if getnode() == getnode() else None
+
 Generate a gravatar url from email
 -----------------------------------
+
+
+Get IP address for a hostname
+-----------------------------------
+
+    import socket
+    socket.gethostbyname('agiliq.com')
