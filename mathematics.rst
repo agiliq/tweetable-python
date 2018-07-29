@@ -1,11 +1,24 @@
 Mathematic
 ----------
 
-Deciman to Binary
+Decimal to Binary
 =======================
 
 Binary to decimal
 ========================
+
+Factorial sequence
+=======================
+
+Fibonacci Sequence
+====================
+
+GCD of two number
+=====================
+
+LCM of two numbers
+=====================
+
 
 pascal's triangle
 =================
@@ -45,7 +58,7 @@ Find largest number among numbers passed on command line
 ===========================================================
 
 
-unit convertor
+unit converter
 ==============
 
 

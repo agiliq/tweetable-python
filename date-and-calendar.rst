@@ -24,6 +24,10 @@ Display current month's calendar
     30 31
 
 
+Number of days remaining to Christmas
+--------------------------------------
+
+
 Is the current year a leap year?
 ---------------------------------
 
