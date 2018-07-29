@@ -21,6 +21,9 @@ Pig latin
 
 https://en.wikipedia.org/wiki/Pig_Latin
 
+Convert to leetspeak
+========================
+
 
 convert repeated spaces to one space
 ====================================

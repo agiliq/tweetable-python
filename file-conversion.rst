@@ -102,13 +102,16 @@ Rename all files in directory to add .bak extension
 
 Copy all files with name :code:`filename.ext` to `filename.bak.ext`
 
+Find all python files in directory which are less than 280 chars, excepting lines which start with a #
+=======================================================================================================
+
 Managing your downloads folder
 ==================================
 
-When you download files, it generally goes :code:`~/Downloads`. 
+When you download files, it generally goes :code:`~/Downloads`.
 This folder grows and becomes unwieldy as time goes.
 
-So to manage this, we will create a folder of format :code:`YYYY-MM` in the :code:`~/Downloads` folder 
+So to manage this, we will create a folder of format :code:`YYYY-MM` in the :code:`~/Downloads` folder
 and move all files tothe correct folder.
 
 

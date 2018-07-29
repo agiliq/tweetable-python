@@ -15,7 +15,10 @@ Take this example
 .. code-block:: python
 
     import random, string
-    "".join([random.choice(string.ascii_letters + string.digits) for i in range(8)])
+    "".join(
+      [random.choice(string.ascii_letters + string.digits)
+      for i in range(8)]
+    )
 
 In less than a 100 chars, you can generate truly random passwords.
 
@@ -40,6 +43,8 @@ Lets get started.
    date-and-calendar
    modules
    lists-set
+   games
+   remote
    misc
    ester-eggs
 
