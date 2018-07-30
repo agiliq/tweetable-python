@@ -12,6 +12,9 @@ Get truly random numbers
 Verify if password is insecure using HIBP
 --------------------------------------------
 
+Get a user's latest tweet
+------------------------------
+
 
 Currency conversion
 ----------------------
