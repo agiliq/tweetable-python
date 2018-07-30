@@ -72,6 +72,9 @@ Prints alternating patterns in # and * based on a given integer n. n=7 here.
 banners (cowsay)
 ================
 
+Display list of tuples as tables on terminal
+================================================
+
 Generate sparklines
 =====================
 

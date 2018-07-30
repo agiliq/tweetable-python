@@ -26,3 +26,5 @@ Sort a dictionary by keys
 Sort a dictionary by value
 --------------------------------
 
+Cartesian product of two lists 
+--------------------------------
