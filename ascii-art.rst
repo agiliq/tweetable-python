@@ -68,6 +68,11 @@ Prints alternating patterns in # and * based on a given integer n. n=7 here.
     ######**
     #######*
 
+Display current directory as a tree
+=======================================
+
+Similar to running tree
+
 
 banners (cowsay)
 ================
