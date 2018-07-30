@@ -27,10 +27,22 @@ Display current month's calendar
 Number of days remaining to Christmas
 --------------------------------------
 
+.. code-block:: python
+
+    python -c "import datetime; print('{} day(s)'.format((datetime.date(year=datetime.datetime.now().year, month=12, day=25) - datetime.datetime.now().date()).days))"
+
 
 Is the current year a leap year?
 ---------------------------------
 
+.. code-block:: python
+
+    python -c "import calendar, datetime; print(calendar.isleap(datetime.datetime.now().year))"
+
+
 Unix epoch time
 -----------------------------
 
+.. code-block:: python
+
+    python -c "import datetime; print('{} seconds since the epoch'.format(datetime.datetime.now().timestamp()))"
