@@ -139,14 +139,41 @@ To run it for arbitrary files
 Reverse a file line by line
 ===================================
 
+.. code-block:: bash
+
+    python -c "import sys;c=open('reverse.txt','w');c.write('\n'.join([x for x in open(sys.argv[1], 'r').read().split('\n')[::-1]]));c.close()" data/100west.txt
+
+Creates a file with line in reverse order from that of the input file.
+
+
 Get alternate lines from files starting from the top
 ======================================================
+
+.. code-block:: bash
+
+    python -c "import sys;c=open('alternate.txt','w');c.write('\n'.join([x for x in open(sys.argv[1], 'r').read().split('\n')[::2]]));c.close()" data/100west.txt
+
+Creates a new file with alternate lines of the input file.
+
 
 Find the most common words in a file
 ======================================
 
+.. code-block:: bash
+
+    python -c "import string,collections,sys,re;z=re.sub('[\n{}]'.format(string.punctuation), '',  open(sys.argv[1],'r').read().lower());x=collections.Counter(z.split(' '));del x[''];print(sorted(x.items(), key=lambda kv: kv[1], reverse=True)[:15])"
+
+Returns the 15 most used words in a text file.
+
+
 Find the lines which match a specified text
 ============================================================================
+
+.. code-block:: bash
+
+    python -c "import sys;search_text=input('Enter text to search:  ');print([x for x in open(sys.argv[1], 'r').read().split('\n') if search_text.lower() in x.lower()])" data/100west.txt
+
+Returns all the lines containing an input text.
 
 
 Convert file permissions to octal
@@ -155,9 +182,17 @@ Convert file permissions to octal
 rw-r--r-- = 644
 rwxrwxrwx = 777
 
+.. code-block:: bash
+
+    python -c "_input=input('Enter file permissions: ');print(''.join([{'r--': '4', 'rw-': '6', 'r-x':'5', 'rwx':'7'}[x] for x in [_input[i:i+3] for i in range(0, len(_input), 3)]]))"
+
 
 Convert octal file permissions to rwx format
 =============================================
 
 644 = rw-r--r--
 777 = rwxrwxrwx
+
+.. code-block:: bash
+
+    python -c "_input=input('Enter file permissions: ');print(''.join([{'4':'r--', '6':'rw-','5':'r-x','7':'rwx'}[x] for x in str(_input)]))"
