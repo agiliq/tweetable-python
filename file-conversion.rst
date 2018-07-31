@@ -133,3 +133,6 @@ Returns a prettified json string for the given json object. The above json objec
             "three": 789
         }
     ]
+
+convert CSV to sqlite
+-------------------------

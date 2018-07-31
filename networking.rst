@@ -83,3 +83,7 @@ Get IP address for a hostname
 
     import socket
     socket.gethostbyname('agiliq.com')
+
+
+Check if website is up
+----------------------------
