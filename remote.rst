@@ -33,6 +33,9 @@ Quote of the day
 
 https://quotes.rest/qod
 
+Copy a file to FTP with a datestamped name
+---------------------------------------------------------------
+
 
 
 Get the time using a NTP server
