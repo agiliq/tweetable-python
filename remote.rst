@@ -48,7 +48,7 @@ s.SOCK_DGRAM is 2
     import socket as s,struct,time
 
     def ntp(url):
-        c=s.socket(2,)
+        c=s.socket(2,2)
         d=b'\x1b'+47*b'\0'
         c.sendto(d,(url,123))
         d,address=c.recvfrom(1024)
