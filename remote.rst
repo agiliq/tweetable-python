@@ -40,14 +40,17 @@ Get the time using a NTP server
 
 http://code.activestate.com/recipes/117211-simple-very-sntp-client/
 
+s.AF_INET is 2
+s.SOCK_DGRAM is 2
+
 .. code-block:: python
 
     import socket as s,struct,time
 
-    def ntp():
-        c=s.socket(s.AF_INET,s.SOCK_DGRAM)
+    def ntp(url):
+        c=s.socket(2,)
         d=b'\x1b'+47*b'\0'
-        c.sendto(d,('time.nist.gov',123))
+        c.sendto(d,(url,123))
         d,address=c.recvfrom(1024)
         if d:
             t=struct.unpack('!12I',d)[10]
