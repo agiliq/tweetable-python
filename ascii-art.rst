@@ -122,3 +122,38 @@ horizontal bar graphs
         return "\n".join(
             [f"{n} {b}" for n, b in zip(series, [ch*(el+1) for el in bucketed])]
         )
+
+Column Graphs
+===============
+
+.. code-block:: python
+
+    ch= "█"
+    def col(sz):
+        mn,mx=min(sz),max(sz)
+        df = (mx-mn)//8
+        bkt = [(el-mn)//df for el in sz]
+        hrz = [f"{b}{c}" for b,c in
+                [(ch*(el+1)," "*(8-el))  for el in bkt]
+            ]
+        return "\n".join([" ".join(el) for el in list(map(list, zip(*hrz)))[::-1]])
+
+
+.. code-block:: bash
+
+
+    In [2]: import random
+
+    In [3]: series = [random.randint(10, 99) for _ in range(25)]
+
+    In [4]: print(col(series))
+
+    █                         █   █
+    █           █       █     █   █                 █
+    █           █ █     █     █   █   █     █ █     █
+    █       █   █ █     █     █   █   █     █ █     █
+    █       █   █ █     █     █   █ █ █     █ █     █
+    █       █   █ █     █     █   █ █ █     █ █     █
+    █       █ █ █ █ █   █     █   █ █ █     █ █ █   █
+    █       █ █ █ █ █   █ █   █ █ █ █ █ █   █ █ █ █ █
+    █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █ █
