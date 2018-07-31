@@ -4,7 +4,7 @@ Date and Calendar
 Display current year's calendar
 -----------------------------------
 
-.. code-block:: python
+.. code-block:: bash
 
     python -c "import calendar, datetime; today = datetime.datetime.today();print(calendar.TextCalendar().formatyear(today.year))"
 
@@ -27,10 +27,22 @@ Display current month's calendar
 Number of days remaining to Christmas
 --------------------------------------
 
+.. code-block:: bash
+
+    python -c "import datetime; print('{} day(s)'.format((datetime.date(year=datetime.datetime.now().year, month=12, day=25) - datetime.datetime.now().date()).days))"
+
 
 Is the current year a leap year?
 ---------------------------------
 
+.. code-block:: bash
+
+    python -c "import calendar, datetime; print(calendar.isleap(datetime.datetime.now().year))"
+
+
 Unix epoch time
 -----------------------------
 
+.. code-block:: bash
+
+    python -c "import datetime; print('{} seconds since the epoch'.format(datetime.datetime.now().timestamp()))"

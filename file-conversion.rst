@@ -40,7 +40,7 @@ csv to sqlite
 =============
 
 
-base64 encoding
+Base64 encoding
 ===============
 
 .. code-block:: python
@@ -57,7 +57,7 @@ To run it for arbitrary files
     $ python -c "import base64,sys,sys;base64.encode(open(sys.argv[1], 'r'), open('data/encoded.txt', 'w'))" data/test.txt
 
 
-base64 decoding
+Base64 decoding
 ===============
 
 .. code-block:: python
@@ -74,7 +74,7 @@ To run it for arbitrary files
     $ python -c "import base64,sys;base64.decode(open(sys.argv[1], 'r'), open('data/decoded.txt', 'w'))" data/test.txt
 
 
-zip all .txt files in directory
+Zip all .txt files in directory
 ===============================
 
 .. code-block:: python
@@ -92,27 +92,55 @@ To run it for arbitrary directory. You must provide the absolute path to the dir
     $ python -c "import zipfile,os,sys; myzip=zipfile.ZipFile('test.zip', 'w'); [myzip.write(each) for each in os.listdir(sys.argv[1]) if each.endswith('.txt')]" /User/xyz/files/
 
 
-batch rename files in directory
+Batch rename files in directory
 ===============================
+
+.. code-block:: bash
+
+    python -c "import sys,os,re;[os.rename(sys.argv[1]+'/'+each, sys.argv[1]+'/'+re.sub('.txt', '.rst', each)) for each in os.listdir(sys.argv[1])]" ./data
+
 
 Change all files with :code:`.txt` extension to :code:`.rst`.
 
-Rename all files in directory to add .bak extension
+
+Copy all files in directory to add .bak extension
 =====================================================
 
+.. code-block:: bash
+
+    python -c "import shutil,sys,os,re;[shutil.copyfile(sys.argv[1]+'/'+each, sys.argv[1]+'/'+re.sub('.ext', '.bak.ext', each)) for each in os.listdir(sys.argv[1]) if (each.endswith('.ext') and not each.endswith('.bak.ext'))]" ./data
+
+
 Copy all files with name :code:`filename.ext` to `filename.bak.ext`
+
 
 Find all python files in directory which are less than 280 chars, excepting lines which start with a #
 =======================================================================================================
 
+.. code-block:: python
+
+    def return_character_count(_file):
+        count=sum([len(each) for each in open(_file, 'rb') if not each.startswith(b'#') and len(each) <=280])
+        return _file if count<=280 else None
+    [return_character_count(each) for each in os.listdir() if each.endswith('.py')]
+
+
+
 Managing your downloads folder
 ==================================
+
+.. code-block:: python
+
+    import os,shutil, datetime as dt;result_dict={};download_dir='~/Desktop/'
+    [result_dict.setdefault(dt.datetime.strftime(dt.datetime.fromtimestamp(os.path.getmtime(download_dir+each)), '%Y-%m'), []).append(each) for each in os.listdir(download_dir) if os.path.isfile(download_dir+each)]
+    for x in result_dict: new_dir = download_dir+x+'/'; os.makedirs(new_dir, exist_ok=True);[shutil.move(download_dir+each, new_dir+each) for each in result_dict[x]]
+
 
 When you download files, it generally goes :code:`~/Downloads`.
 This folder grows and becomes unwieldy as time goes.
 
 So to manage this, we will create a folder of format :code:`YYYY-MM` in the :code:`~/Downloads` folder
-and move all files tothe correct folder.
+and move all files to the correct folder.
 
 
 prettify json
