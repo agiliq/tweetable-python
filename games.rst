@@ -54,5 +54,23 @@ get a shuffled deck of cards
 Draw a single card
 -----------------------------------
 
+.. code-block:: python
+
+    import random, itertools
+    def draw_card()
+        deck = list(
+            itertools.product("♠♣♥♦♤♧♢♡", "AKQJ🔟98765432")
+        )
+        return random.choice(deck)
+    print(draw_card())
+
+
 Roll a d20 dice
 -------------------
+
+.. code-block:: bash
+
+    python -c "import random;print(random.choice(range(1,21)))"
+
+D20 dice has 20 faces with numbers from 1 to 20. range(1,21) generates a list of number from 1 to 20.
+:code:`random.choice` randomly get the value from the list.

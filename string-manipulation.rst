@@ -39,11 +39,42 @@ re is a regular expression module to find more than one occurrences of space wit
 Check if a string is a valid IP v4 address
 ========================================================================
 
+.. code-block:: python
+
+    import ipaddress
+    ip_addr = input('Enter an IPv4 address: ')
+    try:
+        ipaddress.ip_address(ip_addr)
+    except ValueError:
+        print('Invalid IP v4 address')
+    else:
+        print('Valid IP v4 address')
+
+
+
 Check if a string is a valid IP v6 address
 ========================================================================
 
+.. code-block:: python
+
+    import ipaddress
+    ip_addr = input('Enter an IPv6 address: ')
+    try:
+        ipaddress.ip_address(ip_addr)
+    except ValueError:
+        print('Invalid IP v6 address')
+    else:
+        print('Valid IP v6 address')
+
+
+
 Check if string is palindrome
 ==============================
+
+.. code-block:: bash
+
+    python -c "s=input('Enter a string: ');print('{} is {} a Palindrome'.format(s, '' if s==s[::-1] else 'not'))"
+
 
 Find all valid anagrams of a word
 =======================================
