@@ -4,8 +4,25 @@ String manipulation
 Invert letter case of string
 ===============================
 
+.. code-block:: bash
+
+    python -c "_in=input('Enter a text: ');print(_in.swapcase())"
+
 Rot13 a String
 ====================
+
+.. code-block:: python
+
+    _in = input('Enter a text: ')
+    if each != ' ':
+        each = ord(each) + 13
+        if each > 122 :
+            each=97+(each-123)
+    else:
+    each = ord(each)
+    print(chr(each), end='')
+
+
 
 left pad
 ========
