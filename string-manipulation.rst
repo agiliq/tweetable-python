@@ -8,6 +8,9 @@ Invert letter case of string
 
     python -c "_in=input('Enter a text: ');print(_in.swapcase())"
 
+Swaps case of each character in a given text.
+
+
 Rot13 a String
 ====================
 
@@ -22,6 +25,8 @@ Rot13 a String
     each = ord(each)
     print(chr(each), end='')
 
+ROT13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it, in the alphabet.
+This program prints the Rot13 representation of the input text.
 
 
 left pad
@@ -91,6 +96,9 @@ Check if string is palindrome
 .. code-block:: bash
 
     python -c "s=input('Enter a string: ');print('{} is {} a Palindrome'.format(s, '' if s==s[::-1] else 'not'))"
+
+A palindrome is a word, number, or other sequence of characters which reads the same backward as forward.
+Python's extended slicing syntax :code:`[::-1]` returns the reverse of a given string or an iterable.
 
 
 Find all valid anagrams of a word

@@ -13,12 +13,12 @@ Upside down text
     def replacement(x): return dict(zip(string.ascii_letters+string.digits, 'ɐqɔpǝɟƃɥᴉɾʞlɯuodbɹsʇnʌʍxʎz∀qƆpƎℲפHIſʞ˥WNOԀQɹS┴∩ΛMX⅄Z0ƖᄅƐㄣϛ9ㄥ86')).get(x, ' ')
     print("".join([replacement(ch) for ch in "Guido is a smart guy"]))
 
+Prints the upside down version of the text.
+
 Zalgo text
 -------------------
 
 .. code-block:: python
-
-
 
     import random as r
     u='̡̢̧̨̖̗̘̙̜̝̞̟̠̣̤̥̦̩̪̫̬̭̮̯̰̱̲̳̹̺̻̼͇͈͉͍͎͓͔͕͖͙͚͜͟͢ͅM̴̵̶̷̸'
@@ -34,9 +34,6 @@ Zalgo text
     Out[5]: "H͌̈͋͡e͈͌̀͜͠ ̜͛c͇̱͑̆̎̕o͕̫̅me̲͊̀̓̓̅s͐,͖ ̟̓h̞̞e͔͛͂̋ ̘͙̻͆̇č̮͚͖̿o'm̀͢es̗̑̀,̂͜ t͕̻̾h͚̬̙̻e̡͕̰̼͂ ͔͛cḙ̠ņ̜͚̤̚ṭ̄e̖̩͠ŗ c'a̜͓̅̔n͇n̙̅̔̈́ǫ̠̦̣̏̇t͔͉͍́̈̐ '̺̂ͅhọ͕̹̿̏l̒d͙̹̗̄̈̕,̟ ̩̺͂̉̚͢i̤̲̪̤͗t͔̜ ̵̴͓̓̀ịs͚͍̤͙ ̛̟̗̫͒͋t͓̗͋̏̋̄oo̡͡ ̟́͂̂̕ĺ͇̳ate̝͕̥"
 
 
-
-
-
 get time for functions to execute
 ----------------------------------
 
@@ -47,6 +44,9 @@ get time for functions to execute
         return [each for each in range(x)]
 
     print(timeit.timeit('test(10000)', globals=globals(), number=10000))
+
+:code:`timeit` module in python is used to calculating the time taken by a function complete its execution.
+The value in :code:`number=` determines the number of time the specified method should execute.
 
 
 Towers of Hanoi

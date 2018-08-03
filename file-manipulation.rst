@@ -186,6 +186,12 @@ rwxrwxrwx = 777
 
     python -c "_input=input('Enter file permissions: ');print(''.join([{'r--': '4', 'rw-': '6', 'r-x':'5', 'rwx':'7'}[x] for x in [_input[i:i+3] for i in range(0, len(_input), 3)]]))"
 
+Program to convert unix file permissions :code:`rwxr--r--` to octal system. :code:`r`, :code:`w` and :code:`x` represents
+read, write and execute permissions. The permissions are divided into 3 types, owner permission, group permission and
+others permission. Example, if the file has these permissions, :code:`rw-r--r--`, the owner can read/write that file but
+can not execute it. Member of a group to which that file belongs can only read the file. Similarly, others (who is neither
+the owner nor a member of the group to which the file belongs) also can only read that particular file.
+
 
 Convert octal file permissions to rwx format
 =============================================
@@ -196,3 +202,6 @@ Convert octal file permissions to rwx format
 .. code-block:: bash
 
     python -c "_input=input('Enter file permissions: ');print(''.join([{'4':'r--', '6':'rw-','5':'r-x','7':'rwx'}[x] for x in str(_input)]))"
+
+Program to convert octal file permissions :code:`644` to unix permissions. :code:`4`, :code:`5` and :code:`6` and :code:`7`
+represents :code:`r--`, :code:`r-x`, :code:`rw-` and :code:`rwx` permissions respectively.

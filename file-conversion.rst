@@ -9,6 +9,7 @@ csv to json
     import csv,json;reader = csv.DictReader(open('data/example.csv', 'r'), fieldnames=( "User","Country","Age"))
     out=open('data/out.json','w'); out.write(json.dumps([row for row in reader]))
 
+JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write.
 Converts a given file of comma separated values to json and store it in another file.
 The csv used here doesn't contain headers for the columns.
 
@@ -31,7 +32,8 @@ json to csv
     out=open('data/converted.csv', 'w')
     [out.write(','.join([x[x.keys()[i]] for i in range(len(x))]) + '\n')  for x in _json]
 
-Creates a csv file from a json file.
+JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write.
+The code above creates a csv file from a json file.
 
 :code:`json.loads(open('data/example.json', 'r').read())` Creates a json object from json file.
 
@@ -124,6 +126,8 @@ Find all python files in directory which are less than 280 chars, excepting line
         return _file if count<=280 else None
     [return_character_count(each) for each in os.listdir() if each.endswith('.py')]
 
+
+Finds all the files in a directory which contains code of 280 characters or less (excluding comments).
 
 
 Managing your downloads folder
