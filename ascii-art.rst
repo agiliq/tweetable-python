@@ -1,5 +1,5 @@
-Ascii art
----------------
+Ascii and unicode art
+--------------------------
 
 asterisk triangle
 =================
