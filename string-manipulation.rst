@@ -10,6 +10,8 @@ Invert letter case of string
 
 To use it on terminal.
 
+.. code-block:: bash
+
     python -c "import sys; print(sys.argv[1].swapcase())" "THE quick brown fox, JUMPS ovEr the lazy dog"
 
 
@@ -96,7 +98,19 @@ Check if a string is a valid IP v6 address
 Check if string is palindrome
 ==============================
 
+.. code-block:: python
+
+    def is_palindrome(txt):
+        return txt == txt[::-1]
+
+
 Find all valid anagrams of a word
 =======================================
 
+.. code-block:: python
 
+    import itertools
+    words=set(open('/usr/share/dict/words').read().split());
+    def anagrams(txt):
+        return set(["".join(perm) for perm in itertools.permutations(txt.lower())
+            if "".join(perm) in words])
