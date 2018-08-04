@@ -64,8 +64,16 @@ Pig latin
 
 https://en.wikipedia.org/wiki/Pig_Latin
 
+
+
 Convert to leetspeak
 ========================
+
+.. code-block:: python
+
+    leet_dict = dict(zip("aeilot", "431|07"))
+    def leet(txt):
+        return txt.lower().translate(str.maketrans(leet_dict))
 
 
 convert repeated spaces to one space
