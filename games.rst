@@ -54,5 +54,36 @@ get a shuffled deck of cards
 Draw a single card
 -----------------------------------
 
+.. code-block:: python
+
+    import random, itertools
+    def shuffled_deck():
+        deck = list(
+            itertools.product("♠♣♥♦♤♧♢♡", "AKQJ🔟98765432")
+        )
+    return random.choice(deck)
+
+.. code-block:: bash
+
+    In [1]: import random, itertools
+       ...: def draw_card():
+       ...:     deck = list(
+       ...:         itertools.product("♠♣♥♦♤♧♢♡", "AKQJ🔟98765432")
+       ...:     )
+       ...:     suit, n = random.choice(deck)
+       ...:     return f"{n} of {suit}"
+       ...:
+
+    In [2]: draw_card()
+    Out[2]: '5 of ♧'
+
+    In [3]: draw_card()
+    Out[3]: '🔟 of ♧'
+
+    In [4]: draw_card()
+    Out[4]: '5 of ♡'
+
+
+
 Roll a d20 dice
 -------------------

@@ -11,17 +11,17 @@ Invert letter case of string
 To use it on terminal.
 
     python -c "import sys; print(sys.argv[1].swapcase())" "THE quick brown fox, JUMPS ovEr the lazy dog"
-   
+
 
 Rot13 a String
 ====================
 
 .. code-block:: python
 
-from string import ascii_uppercase as upr, ascii_lowercase as lwr
-def rot13(txt):
-    map = dict(list(zip(upr, upr[13:]+upr[:13]))+list((zip(lwr, lwr[13:]+lwr[:13]))))
-    return "".join([map[el] for el in txt])
+    from string import ascii_uppercase as upr, ascii_lowercase as lwr
+    def rot13(txt):
+        map = dict(list(zip(upr, upr[13:]+upr[:13]))+list((zip(lwr, lwr[13:]+lwr[:13]))))
+        return "".join([map[el] for el in txt])
 
 Alternatively
 
@@ -37,6 +37,25 @@ left pad
 Speaking in ubbi dubbi
 ================================
 
+.. code-block:: python
+
+    vowels = "aeiou"
+    vowels_dict = {i: f"ub{i}" for i in "aeiou"}
+    def ubbi_dubbi(txt):
+        return txt.lower().translate(str.maketrans(vowels_dict))
+
+.. code-block:: bash
+
+    In [4]: ubbi_dubbi("Subaru")
+    Out[4]: 'subububarubu'
+
+    In [5]: ubbi_dubbi("Speak")
+    Out[5]: 'spubeubak'
+
+    In [6]: ubbi_dubbi("Hubba Bubba bubblegum")
+    Out[6]: 'hububbuba bububbuba bububblubegubum'
+
+
 https://www.youtube.com/watch?v=rfR03gibh6M
 https://en.wikipedia.org/wiki/Ubbi_dubbi
 
@@ -45,8 +64,16 @@ Pig latin
 
 https://en.wikipedia.org/wiki/Pig_Latin
 
+
+
 Convert to leetspeak
 ========================
+
+.. code-block:: python
+
+    leet_dict = dict(zip("aeilot", "431|07"))
+    def leet(txt):
+        return txt.lower().translate(str.maketrans(leet_dict))
 
 
 convert repeated spaces to one space
