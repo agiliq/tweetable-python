@@ -4,8 +4,32 @@ String manipulation
 Invert letter case of string
 ===============================
 
+.. code-block:: python
+
+    "THE quick brown fox, JUMPS ovEr the lazy dog".swapcase()
+
+To use it on terminal.
+
+    python -c "import sys; print(sys.argv[1].swapcase())" "THE quick brown fox, JUMPS ovEr the lazy dog"
+   
+
 Rot13 a String
 ====================
+
+.. code-block:: python
+
+from string import ascii_uppercase as upr, ascii_lowercase as lwr
+def rot13(txt):
+    map = dict(list(zip(upr, upr[13:]+upr[:13]))+list((zip(lwr, lwr[13:]+lwr[:13]))))
+    return "".join([map[el] for el in txt])
+
+Alternatively
+
+.. code-block:: python
+
+    import codecs
+    def rot13(txt):
+        return codecs.encode('foobar', 'rot_13')
 
 left pad
 ========
