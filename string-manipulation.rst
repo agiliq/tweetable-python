@@ -36,6 +36,16 @@ Alternatively
 left pad
 ========
 
+.. code-block:: python
+
+    def left_pad(txt, count, fill=' '):
+        return txt.rjust(count, fill)
+
+.. code-block:: bash
+
+    $ python -c "import sys;print(sys.argv[1].rjust(int(sys.argv[2]), sys.argv[3]))" foobar 60 →
+    →→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→foobar
+
 Speaking in ubbi dubbi
 ================================
 
@@ -66,6 +76,15 @@ Pig latin
 
 https://en.wikipedia.org/wiki/Pig_Latin
 
+.. code-block:: python
+
+    vwls=set('aeiou')
+    def pig(wd):
+      if len(wd)<2 or len(vwls&set(wd))==0:return f"{wd}way"
+      elif wd[0] in vwls:return f"{wd}ay"
+      else: x = min(wd.find(v) for v in vwls if v in wd);return f"{wd[x:]}{wd[:x]}way"
+    def pig_ltn(txt): return " ".join(pig(e) for e in txt.lower().split())
+
 
 
 Convert to leetspeak
@@ -92,8 +111,59 @@ re is a regular expression module to find more than one occurrences of space wit
 Check if a string is a valid IP v4 address
 ========================================================================
 
+.. code-block:: python
+
+    def ipv4_check(ip):
+        try:
+            ipaddress.IPv4Address(ip)
+            return True
+        except ipaddress.AddressValueError:
+            return False
+
+Or if you want only traditionally formatted ip addresses.
+
+.. code-block:: python
+
+    def ipv4_check(ip):
+        try:
+            chunks = str(ip).split(".")
+            return all(int(chunk)<255 for chunk in chunks) and len(chunks) == 4
+        except ValueError:
+            return False
+
+
 Check if a string is a valid IP v6 address
 ========================================================================
+
+.. code-block:: python
+
+    def ipv6_check(ip):
+        try:
+            ipaddress.IPv6Address(ip)
+            return True
+        except ipaddress.AddressValueError:
+            return False
+
+.. code-block:: bash
+
+    In [32]: ipv6_check('2001:0db8:85a3:0000:0000:8a2e:0370:7334')
+    Out[32]: True
+
+    In [33]: ipv6_check('2001:0db8:85a3:0000:0000:8a2e:0370:733455')
+    Out[33]: False
+
+
+Or if you want only traditionally formatted ip addresses.
+
+.. code-block:: python
+
+    def ipv6_check(ip):
+        try:
+            chunks = str(ip).split(":")
+            return all(int(chunk, 16)<16**4 for chunk in chunks) and len(chunks) == 8
+        except ValueError:
+            return False
+
 
 Check if string is palindrome
 ==============================
