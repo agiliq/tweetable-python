@@ -1,9 +1,8 @@
 import ipaddress
 
-ip_addr = input('Enter an IPv4 address: ')
-try:
-    ipaddress.ip_address(ip_addr)
-except ValueError:
-    print('Invalid IP address')
-else:
-    print('Valid IP address')
+def ipv4_check(ip):
+    try:
+        ipaddress.IPv4Address(ip)
+        return True
+    except ipaddress.AddressValueError:
+        return False

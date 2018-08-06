@@ -38,10 +38,6 @@ The code above creates a csv file from a json file.
 :code:`json.loads(open('data/example.json', 'r').read())` Creates a json object from json file.
 
 
-csv to sqlite
-=============
-
-
 Base64 encoding
 ===============
 
