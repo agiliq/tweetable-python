@@ -66,13 +66,31 @@ Draw a single card
 .. code-block:: python
 
     import random, itertools
-    def draw_card()
+    def shuffled_deck():
         deck = list(
             itertools.product("♠♣♥♦♤♧♢♡", "AKQJ🔟98765432")
         )
-        random.shuffle(deck)
         return random.choice(deck)
-    print(draw_card())
+
+.. code-block:: bash
+
+    In [1]: import random, itertools
+       ...: def draw_card():
+       ...:     deck = list(
+       ...:         itertools.product("♠♣♥♦♤♧♢♡", "AKQJ🔟98765432")
+       ...:     )
+       ...:     suit, n = random.choice(deck)
+       ...:     return f"{n} of {suit}"
+       ...:
+
+    In [2]: draw_card()
+    Out[2]: '5 of ♧'
+
+    In [3]: draw_card()
+    Out[3]: '🔟 of ♧'
+
+    In [4]: draw_card()
+    Out[4]: '5 of ♡'
 
 As explained in the above example, a deck is created and shuffled randomly. :code:`random.choice()` selects a random
 card out of the deck.
