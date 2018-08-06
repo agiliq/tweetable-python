@@ -16,6 +16,10 @@ guess the number
         x = "too high" if guess > num  else "too low"
         print(x)
 
+Guess a number is a classic game which we can play by entering the number in the terminal. The game keeps on going
+until you have guessed the correct number. Based on the input value you will get a prompt 'too low' or 'too high'
+will you've guess the number correctly.
+
 .. code-block:: ipython
 
     In [22]: play()
@@ -50,6 +54,11 @@ get a shuffled deck of cards
         random.shuffle(deck)
         return "\n".join([f"{n} of {suit}" for suit, n in deck])
 
+For every card game, the card deck should be well shuffled. The program above does that for us.
+:code:`itertools.product()` returns a deck of cards as a list of tuples. Each tuple have suit and rank :code:`('♠', 'A')`.
+:code:`random.shuffle()` shuffles the deck of cards and returns it.
+
+
 
 Draw a single card
 -----------------------------------
@@ -61,7 +70,7 @@ Draw a single card
         deck = list(
             itertools.product("♠♣♥♦♤♧♢♡", "AKQJ🔟98765432")
         )
-    return random.choice(deck)
+        return random.choice(deck)
 
 .. code-block:: bash
 
@@ -83,7 +92,16 @@ Draw a single card
     In [4]: draw_card()
     Out[4]: '5 of ♡'
 
+As explained in the above example, a deck is created and shuffled randomly. :code:`random.choice()` selects a random
+card out of the deck.
 
 
 Roll a d20 dice
 -------------------
+
+.. code-block:: bash
+
+    python -c "import random;print(random.choice(range(1,21)))"
+
+D20 dice has 20 faces with numbers from 1 to 20. range(1,21) generates a list of number from 1 to 20.
+:code:`random.choice` randomly get the value from the list.

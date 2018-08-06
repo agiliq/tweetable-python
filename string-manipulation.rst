@@ -8,6 +8,8 @@ Invert letter case of string
 
     "THE quick brown fox, JUMPS ovEr the lazy dog".swapcase()
 
+Swaps case of each character in a given text.
+
 To use it on terminal.
 
 .. code-block:: bash
@@ -33,6 +35,9 @@ Alternatively
     def rot13(txt):
         return codecs.encode('foobar', 'rot_13')
 
+ROT13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it, in the alphabet.
+This program prints the Rot13 representation of the input text.
+
 left pad
 ========
 
@@ -45,6 +50,7 @@ left pad
 
     $ python -c "import sys;print(sys.argv[1].rjust(int(sys.argv[2]), sys.argv[3]))" foobar 60 →
     →→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→→foobar
+
 
 Speaking in ubbi dubbi
 ================================
@@ -172,6 +178,9 @@ Check if string is palindrome
 
     def is_palindrome(txt):
         return txt == txt[::-1]
+
+A palindrome is a word, number, or other sequence of characters which reads the same backward as forward.
+Python's extended slicing syntax :code:`[::-1]` returns the reverse of a given string or an iterable.
 
 
 Find all valid anagrams of a word

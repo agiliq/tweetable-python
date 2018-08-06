@@ -30,6 +30,8 @@ Passwords with alternate vowels
     import random, string, itertools;
     "".join(itertools.chain(*zip([random.choice(string.ascii_lowercase) for _ in range(6)],  [random.choice('aeiou') for _ in range(6)])))
 
+Get a password where every alternate character is a vowel.
+
 
 Validate password complexity
 ==============================
