@@ -12,6 +12,15 @@ Get truly random numbers
 Verify if password is insecure using HIBP
 --------------------------------------------
 
+.. code-block:: python
+
+    import urllib3
+    email='tweetable@python.com'
+    resp=urllib3.PoolManager().urlopen('GET', 'https://haveibeenpwned.com/api/v2/breachedaccount/{}'.format(email),
+        headers={'user-agent': 'Pwnage-Checker-For-Django'})
+    print('Breached' if resp.data else 'Secure')
+
+
 Get a user's latest tweet
 ------------------------------
 
@@ -25,13 +34,30 @@ Get top 10 urls for a search
 Geocode an address
 ---------------------
 
+.. code-block:: python
+
+    import urllib3,json
+    resp=urllib3.PoolManager().request('GET', 'https://maps.googleapis.com/maps/api/geocode/json?address='+'madhapur,hyderabad')
+    json_resp=json.loads(resp.data)['results']
+    print(json_resp[0]['geometry']['location'] if json_resp['status'] == 'OK' else [])
+
 https://maps.googleapis.com/maps/api/geocode/json?address=madhapur,hyderabad
 
 
 Quote of the day
 ---------------------
 
-https://quotes.rest/qod
+.. code-block:: python
+
+    import urllib3
+
+    def get_quote_of_the_day():
+        http=urllib3.PoolManager()
+        resp=http.request('GET', 'https://quotes.rest/qod')
+        return resp['contents']['quotes'][0]['quote']
+
+Fetch quote of the day from the rest API provided by theysaidso.com.
+
 
 Copy a file to FTP with a datestamped name
 ---------------------------------------------------------------

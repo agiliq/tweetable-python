@@ -76,6 +76,19 @@ Sorting without sort
 
 Insertion sort a list (without using :code:`sorted` or fammily)
 
+.. code-block:: python
+
+    def insertion_sort(data)
+        for i,v in enumerate(data):
+            while i>0:
+                if data[i-1] > data[i]:
+                    data[i-1],data[i] = data[i],data[i-1]
+                else:
+                    break
+                i = i-1
+        return data
+
+
 Sorting without sort again
 ----------------------------
 

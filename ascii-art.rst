@@ -71,6 +71,14 @@ Prints alternating patterns in # and * based on a given integer n. n=7 here.
 Display current directory as a tree
 =======================================
 
+import os
+
+def list_files(startpath):
+    for root, dirs, files in os.walk(startpath):
+        level = root.replace(startpath, '').count(os.sep)
+        indent = ' ' * 4 * (level)
+        print('{}{}/'.format(indent, os.path.basename(root)))
+
 Similar to running tree
 
 
@@ -79,6 +87,32 @@ banners (cowsay)
 
 Display list of tuples as tables on terminal
 ================================================
+
+.. code-block:: python
+
+    def list_as_table(data):
+        for ele1,ele2,ele3 in data:
+            print("{:<14}{:<14}{}".format(ele1,ele2,ele3))
+
+Usage
+
+.. code-block:: bash
+
+    In [1]: data=[('one', 'two', 'three'),('four', 'five', 'six'),('seven','eight','nine')]
+
+    In [2]: def list_as_table(data):
+        ...:     for ele1,ele2,ele3 in data:
+        ...:         print("{:<14}{:<14}{}".format(ele1,ele2,ele3))
+        ...:
+
+    In [3]: list_as_table(l)
+    one           two           three
+    four          five          six
+    seven         eight         nine
+
+Here formatting a strig uses `Format Specification Mini-Language <https://docs.python.org/3.6/library/string.html#format-specification-mini-language>`. :code:`:<14` here first two columns will take 14 spaces
+and the text will be left-aligned.
+
 
 Generate sparklines
 =====================
