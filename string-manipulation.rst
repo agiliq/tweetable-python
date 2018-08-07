@@ -197,10 +197,10 @@ convert repeated spaces to one space
 
 .. code-block:: python
 
-    import re; re.sub(r"[ ]+", ' ', 'this    sentence          has              non-uniform      spaces')
+    s = 'this    sentence          has              non-uniform      spaces'
+    print(' '.join(s.split()))
 
 The above snippet clears out the repeated spaces in a text and replaces it with single space.
-re is a regular expression module to find more than one occurrences of space with '[ ]+'.
 
 
 Check if a string is a valid IP v4 address
@@ -224,7 +224,7 @@ Or if you want only traditionally formatted ip addresses.
     def ipv4_check(ip):
         try:
             chunks = str(ip).split(".")
-            return all(int(chunk)<255 for chunk in chunks) and len(chunks) == 4
+            return all(0<=int(chunk)<=255 for chunk in chunks) and len(chunks) == 4
         except ValueError:
             return False
 
