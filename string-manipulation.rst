@@ -81,6 +81,9 @@ Alternatively, we can go full "Betteries Included", and using the codecs module 
 left pad
 ========
 
+Left pad allow you to specify minimum length to your string and a fill char to pad with to enforce that minimum limit.
+This is easy to do using the `rjust` (right justify) methods on all strings.
+
 .. code-block:: python
 
     def left_pad(txt, count, fill=' '):
@@ -95,12 +98,30 @@ left pad
 Speaking in ubbi dubbi
 ================================
 
+Ubbi dubbi is a language game spoken with the English language, Ubbi dubbi works by adding -ub- before each vowel sound in a syllable.
+
+You can read about ubbi dubbi at: https://en.wikipedia.org/wiki/Ubbi_dubbi
+
+This was recnetly popularised in "the Big bang Theory" https://www.youtube.com/watch?v=rfR03gibh6Ms. 
+Let's look at how we would do it with Python.
+
 .. code-block:: python
 
     vowels = "aeiou"
     vowels_dict = {i: f"ub{i}" for i in "aeiou"}
     def ubbi_dubbi(txt):
         return txt.lower().translate(str.maketrans(vowels_dict))
+
+How are we doing it? We first generate a mapping of vowels to their ubbu-dubbi form.
+
+.. code-block:: python
+
+    vowels = "aeiou"
+    vowels_dict = {i: f"ub{i}" for i in "aeiou"}
+
+
+We then use :code:`str.maketrans(vowels_dict)` to generate the translation table, 
+then use :code:`txt.lower().translate` to generate the ubbu-dubbi. Let's see the function in action.    
 
 .. code-block:: bash
 
@@ -114,8 +135,6 @@ Speaking in ubbi dubbi
     Out[6]: 'hububbuba bububbuba bububblubegubum'
 
 
-https://www.youtube.com/watch?v=rfR03gibh6M
-https://en.wikipedia.org/wiki/Ubbi_dubbi
 
 Pig latin
 ================
