@@ -139,6 +139,12 @@ then use :code:`txt.lower().translate` to generate the ubbu-dubbi. Let's see the
 Pig latin
 ================
 
+Pig Latin is a language game in which words in English are altered, usually by adding a fabricated suffix. The reference to Latin is a deliberate misnomer.
+
+The rules are simple
+
+- For words that begin with consonant sounds, all letters before the initial vowel are placed at the end of the word sequence. Then, "ay" is added,
+- When words begin with consonant clusters (multiple consonants that form one sound), the whole sound is added to the end.Then, "ay" is added,
 https://en.wikipedia.org/wiki/Pig_Latin
 
 .. code-block:: python
@@ -233,13 +239,15 @@ Or if you want only traditionally formatted ip addresses.
 Check if string is palindrome
 ==============================
 
+A palindrome is a word, number, or other sequence of characters which reads the same backward as forward.
+
 .. code-block:: python
 
     def is_palindrome(txt):
         return txt == txt[::-1]
 
-A palindrome is a word, number, or other sequence of characters which reads the same backward as forward.
-Python's extended slicing syntax :code:`[::-1]` returns the reverse of a given string or an iterable.
+
+Python's extended slicing syntax :code:`[::-1]` returns the reverse of a given string or an iterable. By comparing the two, we find out if a string is a palindrome.
 
 
 Find all valid anagrams of a word
