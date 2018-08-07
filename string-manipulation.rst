@@ -51,11 +51,11 @@ This gives a us a list of two-tuples
 
 .. code-block
 
-[('A', 'N'),
- ('B', 'O'),
- ('C', 'P'),
- ...
-]
+    [('A', 'N'),
+    ('B', 'O'),
+    ('C', 'P'),
+    ...
+    ]
 
 We do the same thing for lower case letters. 
 
@@ -145,7 +145,7 @@ The rules are simple
 
 - For words that begin with consonant sounds, all letters before the initial vowel are placed at the end of the word sequence. Then, "ay" is added,
 - When words begin with consonant clusters (multiple consonants that form one sound), the whole sound is added to the end.Then, "ay" is added,
-https://en.wikipedia.org/wiki/Pig_Latin
+- For words that begin with vowel sounds, adds "way" to the end 
 
 .. code-block:: python
 
@@ -156,10 +156,31 @@ https://en.wikipedia.org/wiki/Pig_Latin
       else: x = min(wd.find(v) for v in vwls if v in wd);return f"{wd[x:]}{wd[:x]}way"
     def pig_ltn(txt): return " ".join(pig(e) for e in txt.lower().split())
 
+There is a lot going on here, and to fit the code in 280 chars the variable names are very short. Lets break it down:
+
+.. code-block:: python
+
+    vwls=set('aeiou')
+
+We are creatiing a set of vowels. Then we use it to apply the 3 rules described above.
+
+.. code-block:: python
+
+    def pig(wd):
+      if len(wd)<2 or len(vwls&set(wd))==0:return f"{wd}way"
+      elif wd[0] in vwls:return f"{wd}ay"
+      else: x = min(wd.find(v) for v in vwls if v in wd);return f"{wd[x:]}{wd[:x]}way"
+
+There are few interesting things we are doing. 
+
+- :code:`len(vwls&set(wd))==0` This finds if there are no vowels in the word.
+- :code:`len(vwls&set(wd))==0` This finds the first instance of a vowel, and :code:`f"{wd[x:]}{wd[:x]}way"` splices the consonants from the beginning to the end, then adds way.
 
 
 Convert to leetspeak
 ========================
+
+Leetspeak works by replacing certain letters. So we will use the same technique as rot13, and use :code:`.translate`
 
 .. code-block:: python
 
@@ -182,6 +203,8 @@ re is a regular expression module to find more than one occurrences of space wit
 Check if a string is a valid IP v4 address
 ========================================================================
 
+To find valid addresses, we can use :code:`ipaddress.IPv4Addres` which fails, if the strings can't be parsed ad an IP address.
+
 .. code-block:: python
 
     def ipv4_check(ip):
@@ -202,9 +225,14 @@ Or if you want only traditionally formatted ip addresses.
         except ValueError:
             return False
 
+In here, 
+- we split the IP address on :code:`.`,
+- then :code:`all(int(chunk)<255 for chunk in chunks) and len(chunks) == 4` checks if every chunk is an integer less than 255 and there are 4 chunks.
 
 Check if a string is a valid IP v6 address
 ========================================================================
+
+We use the same technique as above, but use :code:`ipaddress.IPv6Addres`
 
 .. code-block:: python
 
@@ -235,6 +263,9 @@ Or if you want only traditionally formatted ip addresses.
         except ValueError:
             return False
 
+Again we use the same technique as IPv4, 
+- splitting the address on :code:`:`
+- Ensuring each chunk is parsable as a hexadecimal string, and less than :code:`16**4`.
 
 Check if string is palindrome
 ==============================
@@ -253,10 +284,28 @@ Python's extended slicing syntax :code:`[::-1]` returns the reverse of a given s
 Find all valid anagrams of a word
 =======================================
 
+To generate all valid anagrams,
+
+- use :code:`itertools.permutations` to genrate the permutations
+- Use :code:`words=set(open('/usr/share/dict/words').read().split())` to get a woldlist
+- Check if the existing permutation exists and then we will return a set.
+
 .. code-block:: python
 
     import itertools
-    words=set(open('/usr/share/dict/words').read().split());
+    words=set(open('/usr/share/dict/words').read().split())
     def anagrams(txt):
         return set(["".join(perm) for perm in itertools.permutations(txt.lower())
             if "".join(perm) in words])
+
+
+.. code-block:: ipython
+
+    In [5]: anagrams('hello')
+    Out[5]: {'hello'}
+
+    In [6]: anagrams('rat')
+    Out[6]: {'art', 'rat', 'tar'}
+
+    In [7]: anagrams('post')
+    Out[7]: {'opts', 'post', 'pots', 'spot', 'stop', 'tops'}
