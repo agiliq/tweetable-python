@@ -1,24 +1,32 @@
 String manipulation
 ++++++++++++++++++++++++
 
+Text manipulation and working with strings is one of the most common things in programming. Let us start with some simple things.
+
 Invert letter case of string
 ===============================
+
+Swap case of each character in a given text.
 
 .. code-block:: python
 
     "THE quick brown fox, JUMPS ovEr the lazy dog".swapcase()
 
-Swaps case of each character in a given text.
-
 To use it on terminal.
 
 .. code-block:: bash
 
-    python -c "import sys; print(sys.argv[1].swapcase())" "THE quick brown fox, JUMPS ovEr the lazy dog"
+    $ python -c "import sys; print(sys.argv[1].swapcase())" "THE quick brown fox, JUMPS ovEr the lazy dog"
+    the QUICK BROWN FOX, jumps OVeR THE LAZY DOG
 
-
-Rot13 a String
+Rot-13 a String
 ====================
+
+From wikipedia:
+
+.. note: ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple letter substitution cipher that replaces a letter with the 13th letter after it, in the alphabet.
+
+We will look at two ways of doing it.
 
 .. code-block:: python
 
@@ -27,16 +35,48 @@ Rot13 a String
         map = dict(list(zip(upr, upr[13:]+upr[:13]))+list((zip(lwr, lwr[13:]+lwr[:13]))))
         return "".join([map[el] for el in txt])
 
-Alternatively
+There is a lot going on here, so let's break it down.
+
+.. code-block:: python
+
+    from string import ascii_uppercase as upr, ascii_lowercase as lwr
+
+Standard python imports, not much to see here.
+
+.. code-block:: python
+
+    list(zip(upr, upr[13:]+upr[:13]))
+
+This gives a us a list of two-tuples   
+
+.. code-block
+
+[('A', 'N'),
+ ('B', 'O'),
+ ('C', 'P'),
+ ...
+]
+
+We do the same thing for lower case letters. 
+
+.. code-block:: python
+
+    map = dict(list(zip(upr, upr[13:]+upr[:13]))+list((zip(lwr, lwr[13:]+lwr[:13]))))
+
+Now we lookup the substitution letter from the map and switch join the together to get the Rot-13 word.    
+
+.. code-block:: python
+
+    return "".join([map[el] for el in txt])
+
+Alternatively, we can go full "Betteries Included", and using the codecs module do :code:`codecs.encode(txt, 'rot_13')`
 
 .. code-block:: python
 
     import codecs
     def rot13(txt):
-        return codecs.encode('foobar', 'rot_13')
+        return codecs.encode(txt, 'rot_13')
 
-ROT13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it, in the alphabet.
-This program prints the Rot13 representation of the input text.
 
 left pad
 ========
