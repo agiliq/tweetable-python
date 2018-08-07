@@ -1,2 +1,5 @@
-_in=input('Enter a text: ')
-print(_in.swapcase())
+def invert_letter_case(n):
+    return n.swapcase()
+
+def test_invert_letter_case():
+    assert invert_letter_case('AloHA') == 'aLOha'

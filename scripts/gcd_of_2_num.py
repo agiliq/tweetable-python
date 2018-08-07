@@ -1,4 +1,7 @@
 import math
-x=int(input('Enter First No. '))
-y=int(input('Enter Second No. '))
-print(math.gcd(x,y))
+
+def gdc(x,y):
+    return math.gcd(x,y)
+
+def test_gcd():
+    assert gdc(12,8) == 4
