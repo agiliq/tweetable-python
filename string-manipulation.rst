@@ -1,24 +1,32 @@
 String manipulation
 ++++++++++++++++++++++++
 
+Text manipulation and working with strings is one of the most common things in programming. Let us start with some simple things.
+
 Invert letter case of string
 ===============================
+
+Swap case of each character in a given text.
 
 .. code-block:: python
 
     "THE quick brown fox, JUMPS ovEr the lazy dog".swapcase()
 
-Swaps case of each character in a given text.
-
 To use it on terminal.
 
 .. code-block:: bash
 
-    python -c "import sys; print(sys.argv[1].swapcase())" "THE quick brown fox, JUMPS ovEr the lazy dog"
+    $ python -c "import sys; print(sys.argv[1].swapcase())" "THE quick brown fox, JUMPS ovEr the lazy dog"
+    the QUICK BROWN FOX, jumps OVeR THE LAZY DOG
 
-
-Rot13 a String
+Rot-13 a String
 ====================
+
+From wikipedia:
+
+.. note: ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple letter substitution cipher that replaces a letter with the 13th letter after it, in the alphabet.
+
+We will look at two ways of doing it.
 
 .. code-block:: python
 
@@ -27,19 +35,54 @@ Rot13 a String
         map = dict(list(zip(upr, upr[13:]+upr[:13]))+list((zip(lwr, lwr[13:]+lwr[:13]))))
         return "".join([map[el] for el in txt])
 
-Alternatively
+There is a lot going on here, so let's break it down.
+
+.. code-block:: python
+
+    from string import ascii_uppercase as upr, ascii_lowercase as lwr
+
+Standard python imports, not much to see here.
+
+.. code-block:: python
+
+    list(zip(upr, upr[13:]+upr[:13]))
+
+This gives a us a list of two-tuples   
+
+.. code-block
+
+[('A', 'N'),
+ ('B', 'O'),
+ ('C', 'P'),
+ ...
+]
+
+We do the same thing for lower case letters. 
+
+.. code-block:: python
+
+    map = dict(list(zip(upr, upr[13:]+upr[:13]))+list((zip(lwr, lwr[13:]+lwr[:13]))))
+
+Now we lookup the substitution letter from the map and switch join the together to get the Rot-13 word.    
+
+.. code-block:: python
+
+    return "".join([map[el] for el in txt])
+
+Alternatively, we can go full "Betteries Included", and using the codecs module do :code:`codecs.encode(txt, 'rot_13')`
 
 .. code-block:: python
 
     import codecs
     def rot13(txt):
-        return codecs.encode('foobar', 'rot_13')
+        return codecs.encode(txt, 'rot_13')
 
-ROT13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it, in the alphabet.
-This program prints the Rot13 representation of the input text.
 
 left pad
 ========
+
+Left pad allow you to specify minimum length to your string and a fill char to pad with to enforce that minimum limit.
+This is easy to do using the `rjust` (right justify) methods on all strings.
 
 .. code-block:: python
 
@@ -55,12 +98,30 @@ left pad
 Speaking in ubbi dubbi
 ================================
 
+Ubbi dubbi is a language game spoken with the English language, Ubbi dubbi works by adding -ub- before each vowel sound in a syllable.
+
+You can read about ubbi dubbi at: https://en.wikipedia.org/wiki/Ubbi_dubbi
+
+This was recnetly popularised in "the Big bang Theory" https://www.youtube.com/watch?v=rfR03gibh6Ms. 
+Let's look at how we would do it with Python.
+
 .. code-block:: python
 
     vowels = "aeiou"
     vowels_dict = {i: f"ub{i}" for i in "aeiou"}
     def ubbi_dubbi(txt):
         return txt.lower().translate(str.maketrans(vowels_dict))
+
+How are we doing it? We first generate a mapping of vowels to their ubbu-dubbi form.
+
+.. code-block:: python
+
+    vowels = "aeiou"
+    vowels_dict = {i: f"ub{i}" for i in "aeiou"}
+
+
+We then use :code:`str.maketrans(vowels_dict)` to generate the translation table, 
+then use :code:`txt.lower().translate` to generate the ubbu-dubbi. Let's see the function in action.    
 
 .. code-block:: bash
 
@@ -74,12 +135,16 @@ Speaking in ubbi dubbi
     Out[6]: 'hububbuba bububbuba bububblubegubum'
 
 
-https://www.youtube.com/watch?v=rfR03gibh6M
-https://en.wikipedia.org/wiki/Ubbi_dubbi
 
 Pig latin
 ================
 
+Pig Latin is a language game in which words in English are altered, usually by adding a fabricated suffix. The reference to Latin is a deliberate misnomer.
+
+The rules are simple
+
+- For words that begin with consonant sounds, all letters before the initial vowel are placed at the end of the word sequence. Then, "ay" is added,
+- When words begin with consonant clusters (multiple consonants that form one sound), the whole sound is added to the end.Then, "ay" is added,
 https://en.wikipedia.org/wiki/Pig_Latin
 
 .. code-block:: python
@@ -174,13 +239,15 @@ Or if you want only traditionally formatted ip addresses.
 Check if string is palindrome
 ==============================
 
+A palindrome is a word, number, or other sequence of characters which reads the same backward as forward.
+
 .. code-block:: python
 
     def is_palindrome(txt):
         return txt == txt[::-1]
 
-A palindrome is a word, number, or other sequence of characters which reads the same backward as forward.
-Python's extended slicing syntax :code:`[::-1]` returns the reverse of a given string or an iterable.
+
+Python's extended slicing syntax :code:`[::-1]` returns the reverse of a given string or an iterable. By comparing the two, we find out if a string is a palindrome.
 
 
 Find all valid anagrams of a word
