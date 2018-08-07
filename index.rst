@@ -68,8 +68,8 @@ Lets get started.
 
 
 .. toctree::
-   :maxdepth: 2
    :numbered:
+   :maxdepth: 2
    :caption: Table of Contents:
 
    string-manipulation
