@@ -16,7 +16,10 @@ To use it on terminal.
 
 .. code-block:: bash
 
-    $ python -c "import sys; print(sys.argv[1].swapcase())" "THE quick brown fox, JUMPS ovEr the lazy dog"
+    $ python -c \
+        "import sys; print(sys.argv[1].swapcase())" \
+        "THE quick brown fox, JUMPS ovEr the lazy dog"
+
     the QUICK BROWN FOX, jumps OVeR THE LAZY DOG
 
 Rot-13 a String
@@ -47,7 +50,7 @@ Standard python imports, not much to see here.
 
     list(zip(upr, upr[13:]+upr[:13]))
 
-This gives a us a list of two-tuples   
+This gives a us a list of two-tuples
 
 .. code-block
 
@@ -57,13 +60,13 @@ This gives a us a list of two-tuples
     ...
     ]
 
-We do the same thing for lower case letters. 
+We do the same thing for lower case letters.
 
 .. code-block:: python
 
     map = dict(list(zip(upr, upr[13:]+upr[:13]))+list((zip(lwr, lwr[13:]+lwr[:13]))))
 
-Now we lookup the substitution letter from the map and switch join the together to get the Rot-13 word.    
+Now we lookup the substitution letter from the map and switch join the together to get the Rot-13 word.
 
 .. code-block:: python
 
@@ -102,7 +105,7 @@ Ubbi dubbi is a language game spoken with the English language, Ubbi dubbi works
 
 You can read about ubbi dubbi at: https://en.wikipedia.org/wiki/Ubbi_dubbi
 
-This was recnetly popularised in "the Big bang Theory" https://www.youtube.com/watch?v=rfR03gibh6Ms. 
+This was recnetly popularised in "the Big bang Theory" https://www.youtube.com/watch?v=rfR03gibh6Ms.
 Let's look at how we would do it with Python.
 
 .. code-block:: python
@@ -120,8 +123,8 @@ How are we doing it? We first generate a mapping of vowels to their ubbu-dubbi f
     vowels_dict = {i: f"ub{i}" for i in "aeiou"}
 
 
-We then use :code:`str.maketrans(vowels_dict)` to generate the translation table, 
-then use :code:`txt.lower().translate` to generate the ubbu-dubbi. Let's see the function in action.    
+We then use :code:`str.maketrans(vowels_dict)` to generate the translation table,
+then use :code:`txt.lower().translate` to generate the ubbu-dubbi. Let's see the function in action.
 
 .. code-block:: bash
 
@@ -145,7 +148,7 @@ The rules are simple
 
 - For words that begin with consonant sounds, all letters before the initial vowel are placed at the end of the word sequence. Then, "ay" is added,
 - When words begin with consonant clusters (multiple consonants that form one sound), the whole sound is added to the end.Then, "ay" is added,
-- For words that begin with vowel sounds, adds "way" to the end 
+- For words that begin with vowel sounds, adds "way" to the end
 
 .. code-block:: python
 
@@ -171,7 +174,7 @@ We are creatiing a set of vowels. Then we use it to apply the 3 rules described 
       elif wd[0] in vwls:return f"{wd}ay"
       else: x = min(wd.find(v) for v in vwls if v in wd);return f"{wd[x:]}{wd[:x]}way"
 
-There are few interesting things we are doing. 
+There are few interesting things we are doing.
 
 - :code:`len(vwls&set(wd))==0` This finds if there are no vowels in the word.
 - :code:`len(vwls&set(wd))==0` This finds the first instance of a vowel, and :code:`f"{wd[x:]}{wd[:x]}way"` splices the consonants from the beginning to the end, then adds way.
@@ -225,7 +228,7 @@ Or if you want only traditionally formatted ip addresses.
         except ValueError:
             return False
 
-In here, 
+In here,
 - we split the IP address on :code:`.`,
 - then :code:`all(int(chunk)<255 for chunk in chunks) and len(chunks) == 4` checks if every chunk is an integer less than 255 and there are 4 chunks.
 
@@ -263,7 +266,7 @@ Or if you want only traditionally formatted ip addresses.
         except ValueError:
             return False
 
-Again we use the same technique as IPv4, 
+Again we use the same technique as IPv4,
 - splitting the address on :code:`:`
 - Ensuring each chunk is parsable as a hexadecimal string, and less than :code:`16**4`.
 
