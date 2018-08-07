@@ -1,4 +1,8 @@
 import math
-x=int(input('Enter First No. '))
-y=int(input('Enter Second No. '))
-print((x*y)//math.gcd(x,y))
+
+def lcm(x,y):
+    return (x*y)//math.gcd(x,y)
+
+
+def test_lcm():
+    assert lcm(5,7) == 35

@@ -1,5 +1,5 @@
 # Converts a given json file into a csv file.
-import json, csv
+import json
 
 _json = json.loads(open('data/example.json', 'r').read())
 out = open('data/converted.csv', 'w')

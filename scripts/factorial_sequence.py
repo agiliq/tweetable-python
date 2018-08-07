@@ -1,3 +1,7 @@
 import math
-_in=input('Enter value: ')
-print(math.factorial(int(_in)))
+
+def factorial(n):
+    return math.factorial(int(n))
+
+def test_factorial():
+    assert factorial(7) == 5040

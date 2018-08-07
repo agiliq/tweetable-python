@@ -1,3 +1,5 @@
 import shutil,os,re
-[shutil.copyfile('data/'+each, 'data/'+re.sub('.ext', '.bak.ext', each))
- for each in os.listdir('data') if (each.endswith('.ext') and not each.endswith('.bak.ext'))]
+
+def copy_files_in_dir(_dir):
+    [shutil.copyfile(_dir+each, _dir+re.sub('.ext', '.bak.ext', each))
+     for each in os.listdir('data') if (each.endswith('.ext') and not each.endswith('.bak.ext'))]
