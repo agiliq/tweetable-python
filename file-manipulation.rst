@@ -84,6 +84,13 @@ Creates a new file with line number before each line. If the line is empty it wi
 delete trailing spaces
 ======================
 
+.. code-block:: bash
+
+    python -c "print(' trailing spaces will be removed.                        '.rstrip())"
+
+
+:code:`.rstrip()` method is applied on strings to strip all the trailing whitespace on the right side of the string.
+
 
 delete multiple newlines between paragraphs to keep only one line
 =================================================================
