@@ -71,13 +71,14 @@ Prints alternating patterns in # and * based on a given integer n. n=7 here.
 Display current directory as a tree
 =======================================
 
-import os
+.. code-block:: python
+    import os
 
-def list_files(startpath):
-    for root, dirs, files in os.walk(startpath):
-        level = root.replace(startpath, '').count(os.sep)
-        indent = ' ' * 4 * (level)
-        print('{}{}/'.format(indent, os.path.basename(root)))
+    def list_files(startpath):
+        for root, dirs, files in os.walk(startpath):
+            level = root.replace(startpath, '').count(os.sep)
+            indent = ' ' * 4 * (level)
+            print('{}{}/'.format(indent, os.path.basename(root)))
 
 Similar to running tree
 
