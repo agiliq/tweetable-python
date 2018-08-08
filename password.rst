@@ -43,8 +43,28 @@ Validate that a password is least 8 chars, and contains at least 3 of lowercase,
 Caesar Cipher
 ===============================
 
+.. code-block:: python
+
+    from string import ascii_uppercase as upr, ascii_lowercase as lwr
+
+    def caesar_cipher(txt, offset=1):
+        _map = dict(list(zip(upr, upr[offset:] + upr[:offset])) + list((zip(lwr, lwr[offset:] + lwr[:offset]))))
+        return "".join([_map[el] if el in upr+lwr else el for el in txt])
+
+
+Caesar cipher is one of the earliest known and simplest ciphers. It is a substitution cipher with a given offset.
+Each letter is shifted by the offset, default value is 1.
+
+
 Generate a UUID
 ========================
+
+.. code-block:: python
+
+    import uuid
+    print(uuid.uuid4())
+
+Generates a random uuid.
 
 
 Generate a url safe UUID

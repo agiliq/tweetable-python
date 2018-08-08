@@ -77,6 +77,13 @@ Generate a mac Address
 Generate a gravatar url from email
 -----------------------------------
 
+.. code-block:: python
+
+    import hashlib,urllib3
+    def gravatar_from_email(email):
+        hash = hashlib.md5(email.encode()).hexdigest()
+
+
 
 Get IP address for a hostname
 -----------------------------------
