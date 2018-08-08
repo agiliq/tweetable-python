@@ -88,6 +88,8 @@ Generate a gravatar url from email
 Get IP address for a hostname
 -----------------------------------
 
+.. code-block:: python
+
     import socket
     socket.gethostbyname('agiliq.com')
 
