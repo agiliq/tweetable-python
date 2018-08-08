@@ -49,12 +49,12 @@ Quote of the day
 
 .. code-block:: python
 
-    import urllib3
+    import requests as r
 
-    def get_quote_of_the_day():
-        http=urllib3.PoolManager()
-        resp=http.request('GET', 'https://quotes.rest/qod')
-        return resp['contents']['quotes'][0]['quote']
+    def get_quote():
+        resp=r.get('https://quotes.rest/qod')
+        data = resp.json()
+        print(data['contents']['quotes'][0]['quote'])
 
 Fetch quote of the day from the rest API provided by theysaidso.com.
 
