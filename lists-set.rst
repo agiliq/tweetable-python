@@ -20,8 +20,8 @@ Find most common elements in a list with their count
 
     python -c "import collections;print(collections.Counter([1,2,2,3,3,4,4,4,4,4,6,6,6,6,6,6,6,6,6,7]))"
 
-:code:`collections.Counter()` takes the list as input and creates a dictionary with list element as key
-and number of occurrences of the element in list as the value.
+:code:`collections.Counter` will take the list and creates a list of dictionary as :code:`[{<item>: <frequency of item in the list>}, ...]`
+
 
 
 Get only elements which are duplicated from a list
@@ -32,6 +32,9 @@ Get only elements which are duplicated from a list
     python -c "import collections;x=dict(collections.Counter([1,2,3,4,5,5,6,6,6,7]));print([k for k,v in x.items() if v>1])"
 
 Return only those items in the list that are repeated.
+
+:code:`collections.Counter` will take the list and creates a list of dictionary as :code:`[{<item>: <frequency of item in the list>}, ...]`
+:code:`[k for k,v in x.items() if v>1]` creates a new list with the items that are occurred more than ones in the list.
 
 
 Reverse a list
@@ -73,6 +76,8 @@ Sort a dictionary by keys
     python -c "y={1: 6, 2: 5, 3: 4, 4: 3, 5: 2, 6: 1};print(dict(sorted(y.items())))"
 
 Sorts the dict by key.
+:code:`sorted()` is python's in-built method to sorting iterables.
+By default, dictionaries are sorted by key.
 
 
 Sort a dictionary by value
