@@ -1,8 +1,6 @@
 import urllib3
 
-email = 'tweetable@python.com'
-resp = urllib3.PoolManager().urlopen('GET', 'https://haveibeenpwned.com/api/v2/breachedaccount/{}'.format(email),
-    headers={'user-agent': 'Pwnage-Checker-For-Django'})
-print('Breached' if resp.data else 'Secure')
-
-
+def get_quote_of_the_day():
+    http = urllib3.PoolManager()
+    resp = http.request('GET', 'https://quotes.rest/qod')
+    return resp['contents']['quotes'][0]['quote']

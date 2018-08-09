@@ -13,7 +13,9 @@ count words in file
     len(open('data/test.txt', 'r').read().split())
 
 Returns the number of words in a text file, test.txt.
-:code:`open('data/test.txt', 'r').read()` gets us the text of the file, we get the word using :code:`.split()`, and :code:`len` gives us the count of the words.
+:code:`open('data/test.txt', 'r').read()` gets us the text of the file. We get the word using :code:`.split()`,
+splits the text by any whitespace and returns a list of words. Empty strings are removed from the results.
+Then, :code:`len` gives us the count of the words.
 
 To run it for arbitrary files
 
@@ -32,7 +34,8 @@ count lines in file
     len(open('data/test.txt', 'r').read().split('\n'))
 
 Returns the number of lines in a text file, test.txt
-:code:`open('data/test.txt', 'r').read()` gets us the text of the file, we get the word using :code:`.split('\n')`, and :code:`len` gives us the count of lines.
+:code:`open('data/test.txt', 'r').read()` gets us the text of the file, we get the line by using :code:`.split('\n')`,
+which splits the text at every new line character :code:`\n` and returns a list. Calling :code:`len` on the lists gives us the count of lines.
 
 To run it for arbitrary files
 
@@ -53,6 +56,9 @@ add spaces after punctuation
 
 Parse text and add a space after punctuations if its not present. If the space after the punctuation is present
 it will remain intact.
+:code:`re.sub` calls the method :code:`repl` at each encounter of a punctuation followed by a letter or a number as
+specified by the regular expression :code:`'['+string.punctuation+'][a-zA-Z0-9]+'`. :code:`repl` add a space between
+the punctuation and the letter/number and return it.
 
 
 add line numbers to text file
@@ -79,6 +85,8 @@ add line numbers to text file, don't number empty lines
     out.close()
 
 Creates a new file with line number before each line. If the line is empty it will be skipped.
+:code:`line.strip()` will remove leading and trailing whitespaces from the line.
+If its an empty line :code:`line.strip()` will be an empty string.
 
 
 delete trailing spaces
@@ -102,6 +110,7 @@ delete multiple newlines between paragraphs to keep only one line
 
 Delete multiple new lines from a file between paragraphs and save it in a new file.
 
+
 To run it for arbitrary files
 
 
@@ -118,6 +127,8 @@ first ten lines of file
     open('data/100west.txt', 'r').read().split('\n')[:10]
 
 Returns first 10 lines of a file.
+:code:`split('\n')` will return the file as a list where each item of the list is a line from file.
+:code:`[:10]` will perform a slicing operation on the list to return elements from index 0 to 9.
 
 To run it for arbitrary files
 
@@ -135,6 +146,9 @@ last ten lines of file
     open('data/100west.txt', 'r').read().split('\n')[-10:]
 
 Returns last 10 lines of a file
+:code:`split('\n')` will return the file as a list where each item of the list is a line from file.
+:code:`[-10:]` will perform a slicing operation on the list. Negative indexing, :code:`[-n]`, denotes nth element from the last.
+Here, the slicing operation will return last 10 items of the list i.e. last 10 lines of the file.
 
 To run it for arbitrary files
 
@@ -152,6 +166,9 @@ Reverse a file line by line
 
 Creates a file with line in reverse order from that of the input file.
 
+:code:`split('\n')` will return the file as a list where each item of the list is a line from file.
+:code:`[::-1]` will reverse the list.
+
 
 Get alternate lines from files starting from the top
 ======================================================
@@ -161,6 +178,8 @@ Get alternate lines from files starting from the top
     python -c "import sys;c=open('alternate.txt','w');c.write('\n'.join([x for x in open(sys.argv[1], 'r').read().split('\n')[::2]]));c.close()" data/100west.txt
 
 Creates a new file with alternate lines of the input file.
+Here, slicing operation, :code:`[::2]`, is defined with a step=2. Which will extract every 2nd item of the list.
+Thus, creating a list of every alternate line from a file.
 
 
 Find the most common words in a file
@@ -171,6 +190,15 @@ Find the most common words in a file
     python -c "import string,collections,sys,re;z=re.sub('[\n{}]'.format(string.punctuation), '',  open(sys.argv[1],'r').read().lower());x=collections.Counter(z.split(' '));del x[''];print(sorted(x.items(), key=lambda kv: kv[1], reverse=True)[:15])"
 
 Returns the 15 most used words in a text file.
+:code:`re.sub('[\n{}]'.format(string.punctuation), '',  open(sys.argv[1],'r').read().lower())` this code will strip all the
+punctuations and newline characters from the text and :code:`.lower()` will convert the text into lowercase.
+
+:code:`z.split(' ')` will return a list of all the words in the given file.
+
+:code:`collections.Counter` will take the list and creates a list of dictionary as :code:`[{<item>: <frequency of item in the list>}, ...]`
+
+The list of dictionary will be sorted by value with :code:`sorted(x.items(), key=lambda kv: kv[1], reverse=True)` and slicing :code:`[:15]`
+will return top most common words in the file.
 
 
 Find the lines which match a specified text

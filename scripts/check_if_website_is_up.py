@@ -2,8 +2,12 @@ import urllib3
 
 def check_website_is_up(address):
     try:
-        resp = urllib3.PoolManager().request(address)
+        resp = urllib3.PoolManager().request('get', address)
     except:
-        print(False)
+        return False
     else:
-        print(resp.status == 200)
+        return resp.status == 200
+
+
+def test_check_website_is_up():
+    assert check_website_is_up('www.google.com')
