@@ -72,6 +72,7 @@ Display current directory as a tree
 =======================================
 
 .. code-block:: python
+
     import os
 
     def list_files(startpath):

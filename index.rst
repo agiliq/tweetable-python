@@ -1,8 +1,12 @@
-Tweetable Python
+Tweetable #Python
 ==================
 
-128 puny python programs which pack a punch.
+puny python programs packing a punch
 ----------------------------------------------
+
+(128 Python programs in 280 chars or less)
+
+.. image:: book-cover-twp.png
 
 Each programs in this books fits in a single tweet (280 chars or less) and does something useful, powerful or fun.
 
