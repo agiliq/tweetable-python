@@ -75,7 +75,7 @@ Knockout Tournament Draw Generator
 Sorting without sort
 ------------------------
 
-Insertion sort a list (without using :code:`sorted` or fammily)
+Insertion sort a list (without using :code:`sorted` or family)
 
 .. code-block:: python
 
@@ -93,7 +93,7 @@ Insertion sort a list (without using :code:`sorted` or fammily)
 Sorting without sort again
 ----------------------------
 
-Quick sort a list (without using :code:`sorted` or fammily)
+Quick sort a list (without using :code:`sorted` or family)
 
 Build a simple todo manager using SQLIte
 ------------------------------------------

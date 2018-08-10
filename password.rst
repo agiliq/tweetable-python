@@ -8,7 +8,8 @@ Random Alpha-numeric passwords
 
     import random, string; "".join([random.choice(string.ascii_letters + string.digits) for i in range(8)])
 
-Creates a random alpha-numberic string of 8 characters that can be used as a password.
+:code:`random.choice(string.ascii_letters + string.digits)` picks a character from :code:`string.ascii_letter`
+and :code:`string.digits`. Iterating over it will return 8 random alpha-numeric characters which can be used as a password.
 
 
 Pronounceable passwords
@@ -55,6 +56,38 @@ Caesar Cipher
 Caesar cipher is one of the earliest known and simplest ciphers. It is a substitution cipher with a given offset.
 Each letter is shifted by the offset, default value is 1.
 
+.. code-block:: python
+
+    from string import ascii_uppercase as upr, ascii_lowercase as lwr
+
+Standard python imports, not much to see here.
+
+.. code-block:: python
+
+    list(zip(upr, upr[offset:] + upr[:offset]))
+
+This gives a us a list of two-tuples similar to the one shown below based on the value of :code:`offset`
+
+.. code-block
+
+    [('A', 'N'),
+    ('B', 'O'),
+    ('C', 'P'),
+    ...
+    ]
+
+We do the same thing for lower case letters.
+
+.. code-block:: python
+
+        _map = dict(list(zip(upr, upr[offset:] + upr[:offset])) + list((zip(lwr, lwr[offset:] + lwr[:offset]))))
+
+Now we lookup the substitution letter from the map and switch join the together to get the Rot-13 word.
+
+.. code-block:: python
+
+        return "".join([_map[el] if el in upr+lwr else el for el in txt])
+
 
 Generate a UUID
 ========================
@@ -64,7 +97,7 @@ Generate a UUID
     import uuid
     print(uuid.uuid4())
 
-Generates a random uuid.
+Generates a random uuid with 36 characters.
 
 
 Generate a url safe UUID
@@ -77,7 +110,8 @@ Generate a url safe UUID
     import uuid, base64
     base64.urlsafe_b64encode(uuid.uuid4().bytes)
 
-This will give a 24 char UUID. If you need a shorter one, you can take a slice
+This will give a 24 character UUID. If you need a shorter one, you can take a slice
+The code below gives you an unique 16 character UUID
 
 .. code-block:: python
 
