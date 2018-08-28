@@ -66,7 +66,7 @@ Debugging emails
 -------------------
 .. code-block:: bash
 
-    $python -m smtpd -n -c DebuggingServer localhost:1025
+    $ python -m smtpd -n -c DebuggingServer localhost:1025
 
 
 Profiling scripts
@@ -74,4 +74,37 @@ Profiling scripts
 
 .. code-block:: bash
 
-    $python -m cProfile scriptname.py
+    $ python -m cProfile scriptname.py
+
+
+Creating virtual environments
+------------------------------
+.. code-block:: bash
+
+    $ python -m venv venv_name
+
+
+Running doctests
+------------------------------
+Assuming you have my_functions.py with next content:
+
+.. code-block:: python
+
+    def is_palindrome(text):
+        """
+        Check if input text is palindrome
+
+        >>> is_palindrome('eye')
+        True
+
+        >>> is_palindrome('tree')
+        False
+        """
+        return text == text[::-1]
+
+To run doctests:
+
+.. code-block:: bash
+
+    $ python -m doctest my_functions.py
+
