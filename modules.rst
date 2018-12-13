@@ -59,8 +59,6 @@ A simple editor for Python
 
 Every python install comes with the idle editor, you can start it like this :code:`python -m idlelib.idle`
 
-.. image::  _static/idle.png
-
 
 Debugging emails
 -------------------
@@ -107,4 +105,28 @@ To run doctests:
 .. code-block:: bash
 
     $ python -m doctest my_functions.py
+    
+    
+Getting info on your python environment
+--------------------------------------------
 
+.. code-block:: bash
+
+    python -m site
+    
+This prints
+    
+.. code-block:: bash
+
+    sys.path = [
+        '/Users/shabda/repos/cats/data',
+        '/Users/shabda/.virtualenvs/cats-may/lib/python36.zip',
+        '/Users/shabda/.virtualenvs/cats-may/lib/python3.6',
+        '/Users/shabda/.virtualenvs/cats-may/lib/python3.6/lib-dynload',
+        '/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/lib/python3.6',
+        '/Users/shabda/.virtualenvs/cats-may/lib/python3.6/site-packages',
+    ]
+    USER_BASE: '/Users/shabda/.local' (exists)
+    USER_SITE: '/Users/shabda/.local/lib/python3.6/site-packages' (exists)
+    ENABLE_USER_SITE: False
+    
